@@ -6,7 +6,7 @@ on:
     paths:
       - ".github/workflows/contribution-3d.yml"
   schedule:
-    - cron: "30 18 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
