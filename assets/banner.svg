@@ -3,9 +3,14 @@
     <style>
       @keyframes slideUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
       @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-      @keyframes pulseNode { 0%, 100% { opacity: 0.3; r: 4; } 50% { opacity: 0.8; r: 6; } }
-      @keyframes pulseGlow { 0%, 100% { opacity: 0.04; } 50% { opacity: 0.1; } }
-      @keyframes lineDash { to { stroke-dashoffset: -16; } }
+      @keyframes pulseNode { 0%, 100% { opacity: 0.25; r: 4; } 50% { opacity: 0.8; r: 6.5; } }
+      @keyframes pulseGlow { 0%, 100% { opacity: 0.03; } 50% { opacity: 0.08; } }
+      @keyframes lineDash { to { stroke-dashoffset: -20; } }
+      @keyframes binaryDrift1 { 0% { opacity: 0; transform: translateY(0); } 10% { opacity: 0.12; } 90% { opacity: 0.12; } 100% { opacity: 0; transform: translateY(-30px); } }
+      @keyframes binaryDrift2 { 0% { opacity: 0; transform: translateY(0) translateX(0); } 15% { opacity: 0.08; } 85% { opacity: 0.08; } 100% { opacity: 0; transform: translateY(-25px) translateX(10px); } }
+      @keyframes binaryDrift3 { 0% { opacity: 0; transform: translateY(20px); } 20% { opacity: 0.1; } 80% { opacity: 0.1; } 100% { opacity: 0; transform: translateY(-10px); } }
+      @keyframes bgGrid { 0%, 100% { opacity: 0.03; } 50% { opacity: 0.07; } }
+      @keyframes codeBlink { 0%, 100% { opacity: 0.08; } 50% { opacity: 0.15; } }
       .slide-1 { animation: slideUp 0.7s ease-out both; }
       .slide-2 { animation: slideUp 0.7s ease-out 0.15s both; }
       .slide-3 { animation: slideUp 0.7s ease-out 0.3s both; }
@@ -14,10 +19,19 @@
       .node-pulse-2 { animation: pulseNode 3s ease-in-out 1.5s infinite; transform-origin: center; }
       .bg-pulse { animation: pulseGlow 5s ease-in-out infinite; }
       .dash-line { stroke-dasharray: 4 4; animation: lineDash 1s linear infinite; }
+      .bin-1 { animation: binaryDrift1 6s ease-in-out infinite; }
+      .bin-2 { animation: binaryDrift2 8s ease-in-out infinite 1s; }
+      .bin-3 { animation: binaryDrift3 7s ease-in-out infinite 2s; }
+      .bin-4 { animation: binaryDrift1 9s ease-in-out infinite 3s; }
+      .bin-5 { animation: binaryDrift2 5s ease-in-out infinite 0.5s; }
+      .bin-6 { animation: binaryDrift3 10s ease-in-out infinite 4s; }
+      .bin-7 { animation: binaryDrift1 7s ease-in-out infinite 1.5s; }
+      .bin-8 { animation: binaryDrift2 6s ease-in-out infinite 3.5s; }
+      .code-line { animation: codeBlink 4s ease-in-out infinite; }
     </style>
     
     <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="0%" stop-color="#0b0f17"/>
       <stop offset="100%" stop-color="#0d1117"/>
     </linearGradient>
     
@@ -30,114 +44,146 @@
   <!-- Background -->
   <rect width="800" height="260" fill="url(#bgGrad)" rx="8"/>
   
-  <!-- Subtle grid overlay -->
+  <!-- Binary data streams -->
+  <g style="font-family: 'Courier New', monospace; font-size: 9px; fill: #3fb950;">
+    <text x="680" y="40" class="bin-1">0 1 1 0 1 0 0 1</text>
+    <text x="350" y="50" class="bin-2">1 0 0 1 1 0 1 0</text>
+    <text x="80" y="35" class="bin-3">1 1 0 0 0 1 0 1</text>
+    <text x="560" y="220" class="bin-4">0 0 1 1 1 0 0 1</text>
+    <text x="200" y="230" class="bin-5">1 0 1 0 0 1 1 0</text>
+    <text x="450" y="35" class="bin-6">0 1 0 1 1 0 1 0</text>
+    <text x="140" y="55" class="bin-7">1 1 1 0 0 1 0 0</text>
+    <text x="720" y="50" class="bin-8">0 1 1 0 1 1 1 0</text>
+  </g>
+
+  <!-- Terminal code line -->
+  <g class="code-line" style="font-family: 'Courier New', monospace; font-size: 8px; fill: #2ea043;">
+    <text x="480" y="242">$ ping 10.0.0.1</text>
+    <text x="480" y="252">  64 bytes from 10.0.0.1</text>
+  </g>
+  
+  <!-- Digital grid -->
   <g opacity="0.04" class="bg-pulse">
-    <line x1="0" y1="65" x2="800" y2="65" stroke="#3fb950" stroke-width="0.5"/>
-    <line x1="0" y1="130" x2="800" y2="130" stroke="#3fb950" stroke-width="0.5"/>
-    <line x1="0" y1="195" x2="800" y2="195" stroke="#3fb950" stroke-width="0.5"/>
-    <line x1="200" y1="0" x2="200" y2="260" stroke="#3fb950" stroke-width="0.5"/>
-    <line x1="400" y1="0" x2="400" y2="260" stroke="#3fb950" stroke-width="0.5"/>
-    <line x1="600" y1="0" x2="600" y2="260" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="0" y1="52" x2="800" y2="52" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="0" y1="104" x2="800" y2="104" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="0" y1="156" x2="800" y2="156" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="0" y1="208" x2="800" y2="208" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="160" y1="0" x2="160" y2="260" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="320" y1="0" x2="320" y2="260" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="480" y1="0" x2="480" y2="260" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="640" y1="0" x2="640" y2="260" stroke="#3fb950" stroke-width="0.5"/>
   </g>
   
   <!-- Network topology -->
   <g>
-    <!-- Connection lines -->
-    <line x1="80" y1="200" x2="220" y2="130" stroke="#1a3a2e" stroke-width="1"/>
-    <line x1="220" y1="130" x2="380" y2="200" stroke="#1a3a2e" stroke-width="1"/>
-    <line x1="80" y1="200" x2="380" y2="200" stroke="#1a3a2e" stroke-width="1"/>
-    <line x1="220" y1="130" x2="520" y2="90" stroke="#1a3a2e" stroke-width="1"/>
-    <line x1="380" y1="200" x2="520" y2="90" stroke="#1a3a2e" stroke-width="1"/>
-    <line x1="520" y1="90" x2="680" y2="170" stroke="#1a3a2e" stroke-width="1"/>
-    <line x1="380" y1="200" x2="680" y2="170" stroke="#1a3a2e" stroke-width="1"/>
-    <line x1="520" y1="90" x2="720" y2="60" stroke="#1a3a2e" stroke-width="1"/>
-    <line x1="680" y1="170" x2="750" y2="220" stroke="#1a3a2e" stroke-width="1"/>
+    <!-- Core connection lines -->
+    <line x1="60" y1="210" x2="190" y2="140" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="190" y1="140" x2="340" y2="210" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="60" y1="210" x2="340" y2="210" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="190" y1="140" x2="470" y2="90" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="340" y1="210" x2="470" y2="90" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="470" y1="90" x2="610" y2="160" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="340" y1="210" x2="610" y2="160" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="470" y1="90" x2="700" y2="50" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="610" y1="160" x2="750" y2="210" stroke="#1a3a2e" stroke-width="1"/>
     
-    <!-- Active routing path (highlighted) -->
-    <line x1="220" y1="130" x2="380" y2="200" stroke="#3fb950" stroke-width="0.8" opacity="0.3" class="dash-line"/>
-    <line x1="520" y1="90" x2="680" y2="170" stroke="#3fb950" stroke-width="0.8" opacity="0.3" class="dash-line"/>
+    <!-- Extended connections -->
+    <line x1="340" y1="210" x2="430" y2="230" stroke="#1a3a2e" stroke-width="0.8"/>
+    <line x1="610" y1="160" x2="700" y2="130" stroke="#1a3a2e" stroke-width="0.8"/>
+    
+    <!-- Active routing paths (animated dashed) -->
+    <line x1="190" y1="140" x2="340" y2="210" stroke="#3fb950" stroke-width="0.8" opacity="0.25" class="dash-line"/>
+    <line x1="470" y1="90" x2="610" y2="160" stroke="#3fb950" stroke-width="0.8" opacity="0.25" class="dash-line"/>
+    <line x1="60" y1="210" x2="190" y2="140" stroke="#3fb950" stroke-width="0.6" opacity="0.15" class="dash-line"/>
     
     <!-- Animated data packets -->
     <circle r="2.5" fill="#3fb950">
-      <animateMotion dur="3s" repeatCount="indefinite" path="M 80 200 L 220 130"/>
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 60 210 L 190 140"/>
     </circle>
     <circle r="2.5" fill="#3fb950">
-      <animateMotion dur="2.5s" repeatCount="indefinite" path="M 220 130 L 380 200"/>
+      <animateMotion dur="2.5s" repeatCount="indefinite" path="M 190 140 L 340 210"/>
+    </circle>
+    <circle r="2" fill="#3fb950" opacity="0.7">
+      <animateMotion dur="3.5s" repeatCount="indefinite" path="M 470 90 L 610 160" begin="0.5s"/>
     </circle>
     <circle r="2.5" fill="#3fb950">
-      <animateMotion dur="3.5s" repeatCount="indefinite" path="M 520 90 L 680 170" begin="0.5s"/>
-    </circle>
-    <circle r="2.5" fill="#3fb950">
-      <animateMotion dur="2s" repeatCount="indefinite" path="M 380 200 L 520 90" begin="1s"/>
+      <animateMotion dur="2s" repeatCount="indefinite" path="M 340 210 L 470 90" begin="1s"/>
     </circle>
     <circle r="2" fill="#3fb950" opacity="0.6">
-      <animateMotion dur="4s" repeatCount="indefinite" path="M 80 200 L 380 200" begin="1.5s"/>
+      <animateMotion dur="4s" repeatCount="indefinite" path="M 60 210 L 340 210" begin="1.5s"/>
     </circle>
-    <circle r="2" fill="#3fb950" opacity="0.6">
-      <animateMotion dur="2.8s" repeatCount="indefinite" path="M 520 90 L 720 60" begin="0.8s"/>
+    <circle r="2" fill="#3fb950" opacity="0.7">
+      <animateMotion dur="2.8s" repeatCount="indefinite" path="M 470 90 L 700 50" begin="0.8s"/>
+    </circle>
+    <circle r="1.5" fill="#3fb950" opacity="0.5">
+      <animateMotion dur="5s" repeatCount="indefinite" path="M 610 160 L 750 210" begin="2s"/>
+    </circle>
+    <circle r="1.5" fill="#3fb950" opacity="0.5">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 340 210 L 430 230" begin="1.2s"/>
     </circle>
     
     <!-- Network nodes -->
     <!-- Node 1 -->
-    <g transform="translate(80, 200)">
-      <circle r="5" fill="#3fb950" opacity="0.3"/>
-      <circle r="2.5" fill="#0d1117"/>
+    <g transform="translate(60, 210)">
+      <circle r="5" fill="#3fb950" opacity="0.3"/><circle r="2.5" fill="#0d1117"/>
     </g>
-    <!-- Node 2 -->
-    <g transform="translate(220, 130)">
-      <circle r="5" fill="#3fb950" opacity="0.3" class="node-pulse"/>
-      <circle r="2.5" fill="#0d1117"/>
+    <!-- Node 2 (pulsing hub) -->
+    <g transform="translate(190, 140)">
+      <circle r="6" fill="#3fb950" opacity="0.25" class="node-pulse"/><circle r="3" fill="#0d1117"/>
     </g>
     <!-- Node 3 -->
-    <g transform="translate(380, 200)">
-      <circle r="5" fill="#3fb950" opacity="0.3"/>
-      <circle r="2.5" fill="#0d1117"/>
+    <g transform="translate(340, 210)">
+      <circle r="5" fill="#3fb950" opacity="0.3"/><circle r="2.5" fill="#0d1117"/>
     </g>
-    <!-- Node 4 -->
-    <g transform="translate(520, 90)">
-      <circle r="5" fill="#3fb950" opacity="0.3" class="node-pulse-2"/>
-      <circle r="2.5" fill="#0d1117"/>
+    <!-- Node 4 (pulsing hub) -->
+    <g transform="translate(470, 90)">
+      <circle r="6" fill="#3fb950" opacity="0.25" class="node-pulse-2"/><circle r="3" fill="#0d1117"/>
     </g>
     <!-- Node 5 -->
-    <g transform="translate(680, 170)">
-      <circle r="5" fill="#3fb950" opacity="0.3"/>
-      <circle r="2.5" fill="#0d1117"/>
+    <g transform="translate(610, 160)">
+      <circle r="5" fill="#3fb950" opacity="0.3"/><circle r="2.5" fill="#0d1117"/>
     </g>
     <!-- Node 6 -->
-    <g transform="translate(720, 60)">
-      <circle r="5" fill="#3fb950" opacity="0.3"/>
-      <circle r="2.5" fill="#0d1117"/>
+    <g transform="translate(700, 50)">
+      <circle r="4" fill="#3fb950" opacity="0.3"/><circle r="2" fill="#0d1117"/>
     </g>
     <!-- Node 7 -->
-    <g transform="translate(750, 220)">
-      <circle r="5" fill="#3fb950" opacity="0.3"/>
-      <circle r="2.5" fill="#0d1117"/>
+    <g transform="translate(750, 210)">
+      <circle r="4" fill="#3fb950" opacity="0.3"/><circle r="2" fill="#0d1117"/>
+    </g>
+    <!-- Node 8 (leaf) -->
+    <g transform="translate(430, 230)">
+      <circle r="4" fill="#3fb950" opacity="0.25"/><circle r="2" fill="#0d1117"/>
+    </g>
+    <!-- Node 9 (leaf) -->
+    <g transform="translate(700, 130)">
+      <circle r="4" fill="#3fb950" opacity="0.25"/><circle r="2" fill="#0d1117"/>
     </g>
   </g>
   
   <!-- Green accent line -->
-  <rect x="40" y="48" width="3" height="56" rx="1.5" fill="url(#accentLine)" class="slide-1"/>
+  <rect x="40" y="46" width="3" height="58" rx="1.5" fill="url(#accentLine)" class="slide-1"/>
   
   <!-- Text content -->
   <!-- Name -->
-  <text x="55" y="80" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 30px; font-weight: 700; fill: #e6edf3;" class="slide-1">
+  <text x="55" y="78" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 30px; font-weight: 700; fill: #e6edf3;" class="slide-1">
     Eranda Vishwa Dayarathna
   </text>
   
   <!-- Main title -->
-  <text x="55" y="112" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; fill: #3fb950; letter-spacing: 0.4px;" class="slide-2">
+  <text x="55" y="110" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; fill: #3fb950; letter-spacing: 0.4px;" class="slide-2">
     Aspiring Network Engineer
   </text>
   
   <!-- Supporting areas -->
-  <text x="55" y="136" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; fill: #8b949e; letter-spacing: 0.3px;" class="slide-3">
+  <text x="55" y="134" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; fill: #8b949e; letter-spacing: 0.3px;" class="slide-3">
     Cybersecurity  ·  Cloud Infrastructure  ·  IT Infrastructure
   </text>
   
   <!-- Status line -->
   <g class="slide-4">
-    <circle cx="55" cy="165" r="2.5" fill="#3fb950"/>
-    <text x="65" y="169" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #484f58;">
+    <circle cx="55" cy="163" r="2.5" fill="#3fb950"/>
+    <text x="65" y="167" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #484f58;">
       ICT Undergraduate  ·  University of Kelaniya, Sri Lanka
     </text>
   </g>

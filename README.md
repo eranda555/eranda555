@@ -81,6 +81,12 @@ A feature-rich scientific calculator modeled after Casio-class devices. Supports
 
 ---
 
+## Contribution Activity
+
+<img src="profile-3d-contrib/profile-night-green.svg" alt="3D Contribution Graph">
+
+*Updated daily via GitHub Actions.*
+
 
 
 ## Let's Connect
