@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" width="100%" height="auto" style="max-width: 800px;">
+  <defs>
+    <style>
+      @keyframes slideUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes pulseNode { 0%, 100% { opacity: 0.3; r: 4; } 50% { opacity: 0.8; r: 6; } }
+      @keyframes pulseGlow { 0%, 100% { opacity: 0.04; } 50% { opacity: 0.1; } }
+      @keyframes lineDash { to { stroke-dashoffset: -16; } }
+      .slide-1 { animation: slideUp 0.7s ease-out both; }
+      .slide-2 { animation: slideUp 0.7s ease-out 0.15s both; }
+      .slide-3 { animation: slideUp 0.7s ease-out 0.3s both; }
+      .slide-4 { animation: fadeIn 0.7s ease-out 0.5s both; }
+      .node-pulse { animation: pulseNode 3s ease-in-out infinite; transform-origin: center; }
+      .node-pulse-2 { animation: pulseNode 3s ease-in-out 1.5s infinite; transform-origin: center; }
+      .bg-pulse { animation: pulseGlow 5s ease-in-out infinite; }
+      .dash-line { stroke-dasharray: 4 4; animation: lineDash 1s linear infinite; }
+    </style>
+    
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3fb950"/>
+      <stop offset="100%" stop-color="#2ea043"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="260" fill="url(#bgGrad)" rx="8"/>
+  
+  <!-- Subtle grid overlay -->
+  <g opacity="0.04" class="bg-pulse">
+    <line x1="0" y1="65" x2="800" y2="65" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="0" y1="130" x2="800" y2="130" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="0" y1="195" x2="800" y2="195" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="260" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="260" stroke="#3fb950" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="260" stroke="#3fb950" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Network topology -->
+  <g>
+    <!-- Connection lines -->
+    <line x1="80" y1="200" x2="220" y2="130" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="220" y1="130" x2="380" y2="200" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="80" y1="200" x2="380" y2="200" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="220" y1="130" x2="520" y2="90" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="380" y1="200" x2="520" y2="90" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="520" y1="90" x2="680" y2="170" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="380" y1="200" x2="680" y2="170" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="520" y1="90" x2="720" y2="60" stroke="#1a3a2e" stroke-width="1"/>
+    <line x1="680" y1="170" x2="750" y2="220" stroke="#1a3a2e" stroke-width="1"/>
+    
+    <!-- Active routing path (highlighted) -->
+    <line x1="220" y1="130" x2="380" y2="200" stroke="#3fb950" stroke-width="0.8" opacity="0.3" class="dash-line"/>
+    <line x1="520" y1="90" x2="680" y2="170" stroke="#3fb950" stroke-width="0.8" opacity="0.3" class="dash-line"/>
+    
+    <!-- Animated data packets -->
+    <circle r="2.5" fill="#3fb950">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 80 200 L 220 130"/>
+    </circle>
+    <circle r="2.5" fill="#3fb950">
+      <animateMotion dur="2.5s" repeatCount="indefinite" path="M 220 130 L 380 200"/>
+    </circle>
+    <circle r="2.5" fill="#3fb950">
+      <animateMotion dur="3.5s" repeatCount="indefinite" path="M 520 90 L 680 170" begin="0.5s"/>
+    </circle>
+    <circle r="2.5" fill="#3fb950">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M 380 200 L 520 90" begin="1s"/>
+    </circle>
+    <circle r="2" fill="#3fb950" opacity="0.6">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M 80 200 L 380 200" begin="1.5s"/>
+    </circle>
+    <circle r="2" fill="#3fb950" opacity="0.6">
+      <animateMotion dur="2.8s" repeatCount="indefinite" path="M 520 90 L 720 60" begin="0.8s"/>
+    </circle>
+    
+    <!-- Network nodes -->
+    <!-- Node 1 -->
+    <g transform="translate(80, 200)">
+      <circle r="5" fill="#3fb950" opacity="0.3"/>
+      <circle r="2.5" fill="#0d1117"/>
+    </g>
+    <!-- Node 2 -->
+    <g transform="translate(220, 130)">
+      <circle r="5" fill="#3fb950" opacity="0.3" class="node-pulse"/>
+      <circle r="2.5" fill="#0d1117"/>
+    </g>
+    <!-- Node 3 -->
+    <g transform="translate(380, 200)">
+      <circle r="5" fill="#3fb950" opacity="0.3"/>
+      <circle r="2.5" fill="#0d1117"/>
+    </g>
+    <!-- Node 4 -->
+    <g transform="translate(520, 90)">
+      <circle r="5" fill="#3fb950" opacity="0.3" class="node-pulse-2"/>
+      <circle r="2.5" fill="#0d1117"/>
+    </g>
+    <!-- Node 5 -->
+    <g transform="translate(680, 170)">
+      <circle r="5" fill="#3fb950" opacity="0.3"/>
+      <circle r="2.5" fill="#0d1117"/>
+    </g>
+    <!-- Node 6 -->
+    <g transform="translate(720, 60)">
+      <circle r="5" fill="#3fb950" opacity="0.3"/>
+      <circle r="2.5" fill="#0d1117"/>
+    </g>
+    <!-- Node 7 -->
+    <g transform="translate(750, 220)">
+      <circle r="5" fill="#3fb950" opacity="0.3"/>
+      <circle r="2.5" fill="#0d1117"/>
+    </g>
+  </g>
+  
+  <!-- Green accent line -->
+  <rect x="40" y="48" width="3" height="56" rx="1.5" fill="url(#accentLine)" class="slide-1"/>
+  
+  <!-- Text content -->
+  <!-- Name -->
+  <text x="55" y="80" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 30px; font-weight: 700; fill: #e6edf3;" class="slide-1">
+    Eranda Vishwa Dayarathna
+  </text>
+  
+  <!-- Main title -->
+  <text x="55" y="112" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; fill: #3fb950; letter-spacing: 0.4px;" class="slide-2">
+    Aspiring Network Engineer
+  </text>
+  
+  <!-- Supporting areas -->
+  <text x="55" y="136" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; fill: #8b949e; letter-spacing: 0.3px;" class="slide-3">
+    Cybersecurity  ·  Cloud Infrastructure  ·  IT Infrastructure
+  </text>
+  
+  <!-- Status line -->
+  <g class="slide-4">
+    <circle cx="55" cy="165" r="2.5" fill="#3fb950"/>
+    <text x="65" y="169" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #484f58;">
+      ICT Undergraduate  ·  University of Kelaniya, Sri Lanka
+    </text>
+  </g>
+</svg>

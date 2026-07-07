@@ -1,14 +1,4 @@
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  eranda555 / README.md                                          │
-│  Network Engineer | Cybersecurity Enthusiast | ICT Undergraduate │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-# Eranda Vishwa Dayarathna
-
-**ICT Undergraduate — University of Kelaniya, Sri Lanka**  
-*Specializing in Computer Systems Networking & Telecommunications*
+<img src="assets/banner.svg" alt="Eranda Vishwa Dayarathna - Aspiring Network Engineer">
 
 **[LinkedIn](https://www.linkedin.com/in/eranda-vishwa-66a3b1275/)** · **[Portfolio](https://eranda555.github.io)** · **[Email](mailto:erandavishwa555@gmail.com)**
 
