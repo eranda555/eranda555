@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="100%" height="100%">
+  <defs>
+    <style>
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="200" fill="#0d1117" />
+
+  <!-- Title -->
+  <text x="450" y="32" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="22" font-weight="bold" text-anchor="middle" letter-spacing="2">ERANDA VISHWA DAYARATHNA</text>
+  <text x="450" y="52" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" letter-spacing="1">Network Engineering · Cybersecurity · Cloud Infrastructure</text>
+
+  <!-- Connection lines (horizontal paths between devices) -->
+  <!-- ISP to Firewall -->
+  <line x1="130" y1="120" x2="280" y2="120" stroke="#30363d" stroke-width="2" />
+  <line x1="130" y1="120" x2="280" y2="120" stroke="#58a6ff" stroke-width="2" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" begin="0s" repeatCount="indefinite" />
+  </line>
+
+  <!-- Firewall to Switch -->
+  <line x1="340" y1="120" x2="490" y2="120" stroke="#30363d" stroke-width="2" />
+  <line x1="340" y1="120" x2="490" y2="120" stroke="#58a6ff" stroke-width="2" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" begin="1s" repeatCount="indefinite" />
+  </line>
+
+  <!-- Switch to Servers -->
+  <line x1="550" y1="120" x2="700" y2="120" stroke="#30363d" stroke-width="2" />
+  <line x1="550" y1="120" x2="700" y2="120" stroke="#58a6ff" stroke-width="2" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" begin="2s" repeatCount="indefinite" />
+  </line>
+
+  <!-- DATA PACKETS with animateMotion -->
+
+  <!-- Packet 1: ISP to Firewall -->
+  <circle r="4" fill="#56d4dd">
+    <animateMotion dur="4s" repeatCount="indefinite" begin="0s">
+      <mpath>
+        <path d="M130,120 L280,120" />
+      </mpath>
+    </animateMotion>
+  </circle>
+
+  <!-- Packet 2: Firewall to Switch -->
+  <circle r="4" fill="#56d4dd">
+    <animateMotion dur="4s" repeatCount="indefinite" begin="1s">
+      <mpath>
+        <path d="M340,120 L490,120" />
+      </mpath>
+    </animateMotion>
+  </circle>
+
+  <!-- Packet 3: Switch to Servers -->
+  <circle r="4" fill="#56d4dd">
+    <animateMotion dur="4s" repeatCount="indefinite" begin="2s">
+      <mpath>
+        <path d="M550,120 L700,120" />
+      </mpath>
+    </animateMotion>
+  </circle>
+
+  <!-- Packet 4: End-to-end express -->
+  <circle r="3" fill="#3fb950">
+    <animateMotion dur="16s" repeatCount="indefinite" begin="0s">
+      <mpath>
+        <path d="M130,120 L280,120 L340,120 L490,120 L550,120 L700,120" />
+      </mpath>
+    </animateMotion>
+  </circle>
+
+  <!-- ===== DEVICES ===== -->
+
+  <!-- 1. ISP Cloud -->
+  <g transform="translate(60, 80)">
+    <path d="M70,40 
+             A20,20 0 0,1 100,20 
+             A25,25 0 0,1 140,30 
+             A18,18 0 0,1 140,60 
+             L70,60 
+             A12,12 0 0,1 50,50 
+             A15,15 0 0,1 70,40Z" 
+          fill="none" stroke="#58a6ff" stroke-width="2" stroke-dasharray="4,3" />
+    <text x="70" y="80" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" text-anchor="middle">ISP</text>
+  </g>
+
+  <!-- 2. Firewall - Shield shape -->
+  <g transform="translate(280, 80)">
+    <polygon points="30,0 60,15 30,60 0,15" fill="none" stroke="#58a6ff" stroke-width="2" />
+    <polyline points="15,20 25,32 45,12" fill="none" stroke="#3fb950" stroke-width="2.5" />
+    <text x="30" y="80" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" text-anchor="middle">FIREWALL</text>
+  </g>
+
+  <!-- 3. Switch -->
+  <g transform="translate(490, 95)">
+    <rect x="0" y="0" width="60" height="30" rx="2" fill="none" stroke="#58a6ff" stroke-width="2" />
+    <!-- Port dots left -->
+    <circle cx="0" cy="7" r="2" fill="#56d4dd" />
+    <circle cx="0" cy="15" r="2" fill="#56d4dd" />
+    <circle cx="0" cy="23" r="2" fill="#56d4dd" />
+    <!-- Port dots right -->
+    <circle cx="60" cy="7" r="2" fill="#56d4dd" />
+    <circle cx="60" cy="15" r="2" fill="#56d4dd" />
+    <circle cx="60" cy="23" r="2" fill="#56d4dd" />
+    <text x="30" y="50" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" text-anchor="middle">SWITCH</text>
+  </g>
+
+  <!-- 4. Server Rack (2U) -->
+  <g transform="translate(665, 90)">
+    <rect x="0" y="0" width="60" height="60" rx="3" fill="none" stroke="#58a6ff" stroke-width="2" />
+    <rect x="5" y="3" width="50" height="24" rx="2" fill="none" stroke="#30363d" stroke-width="1.5" />
+    <rect x="5" y="33" width="50" height="24" rx="2" fill="none" stroke="#30363d" stroke-width="1.5" />
+    <!-- Server1 LEDs -->
+    <circle cx="50" cy="14" r="2.5" fill="#3fb950">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2s" begin="0s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="50" cy="44" r="2.5" fill="#3fb950">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="30" y="80" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" text-anchor="middle">SERVERS</text>
+  </g>
+
+  <!-- 5. Endpoints - Laptop + Monitor -->
+  <g transform="translate(810, 80)">
+    <!-- Laptop -->
+    <rect x="0" y="30" width="40" height="4" rx="1" fill="none" stroke="#58a6ff" stroke-width="1.5" />
+    <rect x="2" y="15" width="36" height="18" rx="2" fill="none" stroke="#58a6ff" stroke-width="1.5" />
+    <text x="12" y="28" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="5" text-anchor="middle">_</text>
+    <!-- Desktop Monitor -->
+    <rect x="50" y="5" width="30" height="25" rx="2" fill="none" stroke="#58a6ff" stroke-width="1.5" />
+    <rect x="58" y="30" width="14" height="3" rx="1" fill="none" stroke="#58a6ff" stroke-width="1" />
+    <rect x="63" y="33" width="4" height="4" rx="1" fill="none" stroke="#58a6ff" stroke-width="1" />
+    <text x="65" y="55" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" text-anchor="middle">ENDPOINTS</text>
+  </g>
+</svg>

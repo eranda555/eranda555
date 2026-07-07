@@ -1,0 +1,348 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 400" width="100%" height="100%">
+  <defs>
+    <style>
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    </style>
+    <clipPath id="log-clip">
+      <rect x="15" y="245" width="430" height="135" />
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="750" height="400" fill="#0d1117" />
+
+  <!-- ===== HEADER BAR ===== -->
+  <rect x="0" y="0" width="750" height="38" fill="#161b22" />
+  
+  <!-- Live indicator dot -->
+  <circle cx="18" cy="19" r="5" fill="#3fb950">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Title -->
+  <text x="30" y="24" fill="#f0f6fc" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600">NOC DASHBOARD — LIVE</text>
+
+  <!-- Clock (right side) -->
+  <text x="720" y="24" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="14" text-anchor="end">
+    <set attributeName="textContent" to="14:32:05" begin="0s" />
+    <animate attributeName="opacity" values="1;1;1;1;1" dur="10s" repeatCount="indefinite" />
+  </text>
+  <text x="720" y="24" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="14" text-anchor="end">
+    <animate attributeName="opacity" values="0;0;1;1;0" dur="20s" repeatCount="indefinite" />
+    14:32:12
+  </text>
+  <text x="720" y="24" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="14" text-anchor="end">
+    <animate attributeName="opacity" values="0;0;0;0;1;1;0;0;0;0" dur="30s" repeatCount="indefinite" />
+    14:32:24
+  </text>
+
+  <!-- ===== PANEL 1: NETWORK TOPOLOGY (top-left) ===== -->
+  <g transform="translate(10, 45)">
+    <!-- Panel background -->
+    <rect x="0" y="0" width="420" height="155" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1" />
+    <!-- Panel title -->
+    <text x="12" y="18" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600">NETWORK TOPOLOGY</text>
+    <line x1="12" y1="22" x2="408" y2="22" stroke="#21262d" stroke-width="1" />
+
+    <!-- Nodes -->
+    <!-- R1 -->
+    <circle cx="80" cy="65" r="10" fill="#0d1117" stroke="#3fb950" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="0s" repeatCount="indefinite" />
+    </circle>
+    <text x="80" y="68" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="7" text-anchor="middle">R1</text>
+
+    <!-- R2 -->
+    <circle cx="200" cy="55" r="10" fill="#0d1117" stroke="#d29922" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0s" repeatCount="indefinite" />
+    </circle>
+    <text x="200" y="58" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="7" text-anchor="middle">R2</text>
+
+    <!-- SW1 -->
+    <circle cx="100" cy="120" r="10" fill="#0d1117" stroke="#3fb950" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="100" y="123" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="7" text-anchor="middle">SW1</text>
+
+    <!-- SW2 -->
+    <circle cx="220" cy="115" r="10" fill="#0d1117" stroke="#3fb950" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="1s" repeatCount="indefinite" />
+    </circle>
+    <text x="220" y="118" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="7" text-anchor="middle">SW2</text>
+
+    <!-- SRV1 -->
+    <circle cx="155" cy="155" r="10" fill="#0d1117" stroke="#3fb950" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="1.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="155" y="158" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="7" text-anchor="middle">SRV1</text>
+
+    <!-- Connection lines -->
+    <line x1="90" y1="65" x2="190" y2="55" stroke="#30363d" stroke-width="1.5" />
+    <line x1="80" y1="75" x2="80" y2="110" stroke="#30363d" stroke-width="1.5" />
+    <line x1="200" y1="65" x2="220" y2="105" stroke="#30363d" stroke-width="1.5" />
+    <line x1="100" y1="130" x2="150" y2="145" stroke="#30363d" stroke-width="1.5" />
+    <line x1="220" y1="125" x2="160" y2="145" stroke="#30363d" stroke-width="1.5" />
+    <line x1="100" y1="120" x2="200" y2="115" stroke="#30363d" stroke-width="1.5" />
+    <line x1="80" y1="65" x2="100" y2="120" stroke="#30363d" stroke-width="1.5" stroke-dasharray="3,2" />
+    <line x1="200" y1="55" x2="220" y2="115" stroke="#30363d" stroke-width="1.5" stroke-dasharray="3,2" />
+
+    <!-- Animated data dots -->
+    <circle r="3" fill="#56d4dd">
+      <animateMotion dur="4s" repeatCount="indefinite" begin="0s">
+        <mpath>
+          <path d="M90,65 L190,55" />
+        </mpath>
+      </animateMotion>
+    </circle>
+    <circle r="3" fill="#56d4dd">
+      <animateMotion dur="5s" repeatCount="indefinite" begin="1s">
+        <mpath>
+          <path d="M80,75 L80,110" />
+        </mpath>
+      </animateMotion>
+    </circle>
+    <circle r="3" fill="#56d4dd">
+      <animateMotion dur="4s" repeatCount="indefinite" begin="2s">
+        <mpath>
+          <path d="M100,130 L150,145" />
+        </mpath>
+      </animateMotion>
+    </circle>
+  </g>
+
+  <!-- ===== PANEL 2: GLOBAL REACH (top-right) ===== -->
+  <g transform="translate(440, 45)">
+    <rect x="0" y="0" width="300" height="155" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1" />
+    <text x="12" y="18" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600">GLOBAL REACH</text>
+    <line x1="12" y1="22" x2="288" y2="22" stroke="#21262d" stroke-width="1" />
+
+    <!-- Location dots -->
+    <!-- LA -->
+    <g>
+      <circle cx="60" cy="90" r="7" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" begin="0s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="60" cy="90" r="2.5" fill="#58a6ff">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" begin="0s" repeatCount="indefinite" />
+      </circle>
+      <text x="60" y="110" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="8" text-anchor="middle">LA</text>
+    </g>
+
+    <!-- NY -->
+    <g>
+      <circle cx="160" cy="80" r="7" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" begin="1s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="160" cy="80" r="2.5" fill="#58a6ff">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" begin="1s" repeatCount="indefinite" />
+      </circle>
+      <text x="160" y="100" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="8" text-anchor="middle">NY</text>
+    </g>
+
+    <!-- LON -->
+    <g>
+      <circle cx="230" cy="70" r="7" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" begin="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="230" cy="70" r="2.5" fill="#58a6ff">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" begin="2s" repeatCount="indefinite" />
+      </circle>
+      <text x="230" y="90" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="8" text-anchor="middle">LON</text>
+    </g>
+
+    <!-- SIN -->
+    <g>
+      <circle cx="270" cy="125" r="7" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" begin="3s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="270" cy="125" r="2.5" fill="#58a6ff">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" begin="3s" repeatCount="indefinite" />
+      </circle>
+      <text x="270" y="145" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="8" text-anchor="middle">SIN</text>
+    </g>
+
+    <!-- Connection arcs (bezier curves between dots) -->
+    <!-- LA to NY -->
+    <path d="M60,90 Q110,60 160,80" fill="none" stroke="#58a6ff" stroke-width="1" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" values="0;-24" dur="2s" repeatCount="indefinite" />
+    </path>
+    <!-- NY to LON -->
+    <path d="M160,80 Q195,55 230,70" fill="none" stroke="#58a6ff" stroke-width="1" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" values="0;-16" dur="2s" begin="0.5s" repeatCount="indefinite" />
+    </path>
+    <!-- NY to SIN -->
+    <path d="M160,80 Q220,120 270,125" fill="none" stroke="#58a6ff" stroke-width="1" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" values="0;-28" dur="2s" begin="1s" repeatCount="indefinite" />
+    </path>
+    <!-- LON to SIN -->
+    <path d="M230,70 Q260,115 270,125" fill="none" stroke="#58a6ff" stroke-width="1" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" values="0;-12" dur="2s" begin="1.5s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Data pulse dots along arcs -->
+    <circle r="2.5" fill="#56d4dd">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="0s">
+        <mpath>
+          <path d="M60,90 Q110,60 160,80" />
+        </mpath>
+      </animateMotion>
+    </circle>
+    <circle r="2.5" fill="#56d4dd">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s">
+        <mpath>
+          <path d="M160,80 Q220,120 270,125" />
+        </mpath>
+      </animateMotion>
+    </circle>
+  </g>
+
+  <!-- ===== PANEL 3: SECURITY EVENTS (bottom-left) ===== -->
+  <g transform="translate(10, 210)">
+    <rect x="0" y="0" width="440" height="180" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1" />
+    <text x="12" y="18" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600">SECURITY EVENTS</text>
+    <line x1="12" y1="22" x2="428" y2="22" stroke="#21262d" stroke-width="1" />
+
+    <!-- Column headers -->
+    <text x="15" y="38" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="8" font-weight="600">TIME</text>
+    <text x="70" y="38" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="8" font-weight="600">STATUS</text>
+    <text x="125" y="38" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="8" font-weight="600">SOURCE</text>
+    <text x="230" y="38" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="8" font-weight="600">EVENT</text>
+    <line x1="15" y1="42" x2="425" y2="42" stroke="#21262d" stroke-width="0.5" />
+
+    <!-- Scrolling log text -->
+    <g clip-path="url(#log-clip)">
+      <g font-family="'Courier New', Consolas, monospace" font-size="8">
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,-180" dur="12s" repeatCount="indefinite" />
+
+        <!-- Log line 1 -->
+        <text x="15" y="58" fill="#8b949e">14:29:01</text>
+        <text x="70" y="58" fill="#3fb950">OK</text>
+        <text x="125" y="58" fill="#f0f6fc">10.0.1.45</text>
+        <text x="230" y="58" fill="#8b949e">established</text>
+
+        <!-- Log line 2 -->
+        <text x="15" y="72" fill="#8b949e">14:29:05</text>
+        <text x="70" y="72" fill="#3fb950">OK</text>
+        <text x="125" y="72" fill="#f0f6fc">10.0.2.10</text>
+        <text x="230" y="72" fill="#8b949e">authenticated</text>
+
+        <!-- Log line 3 -->
+        <text x="15" y="86" fill="#8b949e">14:29:09</text>
+        <text x="70" y="86" fill="#3fb950">OK</text>
+        <text x="125" y="86" fill="#f0f6fc">10.0.1.88</text>
+        <text x="230" y="86" fill="#8b949e">scanned</text>
+
+        <!-- Log line 4 -->
+        <text x="15" y="100" fill="#8b949e">14:29:13</text>
+        <text x="70" y="100" fill="#3fb950">OK</text>
+        <text x="125" y="100" fill="#f0f6fc">10.0.3.22</text>
+        <text x="230" y="100" fill="#8b949e">allowed</text>
+
+        <!-- Log line 5 -->
+        <text x="15" y="114" fill="#8b949e">14:29:17</text>
+        <text x="70" y="114" fill="#3fb950">OK</text>
+        <text x="125" y="114" fill="#f0f6fc">10.0.1.12</text>
+        <text x="230" y="114" fill="#8b949e">established</text>
+
+        <!-- Log line 6 -->
+        <text x="15" y="128" fill="#8b949e">14:29:21</text>
+        <text x="70" y="128" fill="#3fb950">OK</text>
+        <text x="125" y="128" fill="#f0f6fc">10.0.2.55</text>
+        <text x="230" y="128" fill="#8b949e">authenticated</text>
+
+        <!-- Log line 7 -->
+        <text x="15" y="142" fill="#8b949e">14:29:25</text>
+        <text x="70" y="142" fill="#3fb950">OK</text>
+        <text x="125" y="142" fill="#f0f6fc">10.0.4.01</text>
+        <text x="230" y="142" fill="#8b949e">scanned</text>
+
+        <!-- Log line 8 -->
+        <text x="15" y="156" fill="#8b949e">14:29:29</text>
+        <text x="70" y="156" fill="#3fb950">OK</text>
+        <text x="125" y="156" fill="#f0f6fc">10.0.1.73</text>
+        <text x="230" y="156" fill="#8b949e">allowed</text>
+
+        <!-- Log line 9 -->
+        <text x="15" y="170" fill="#8b949e">14:29:33</text>
+        <text x="70" y="170" fill="#3fb950">OK</text>
+        <text x="125" y="170" fill="#f0f6fc">10.0.3.15</text>
+        <text x="230" y="170" fill="#8b949e">established</text>
+
+        <!-- Log line 10 -->
+        <text x="15" y="184" fill="#8b949e">14:29:37</text>
+        <text x="70" y="184" fill="#3fb950">OK</text>
+        <text x="125" y="184" fill="#f0f6fc">10.0.2.88</text>
+        <text x="230" y="184" fill="#8b949e">authenticated</text>
+
+        <!-- Log line 11 -->
+        <text x="15" y="198" fill="#8b949e">14:29:41</text>
+        <text x="70" y="198" fill="#3fb950">OK</text>
+        <text x="125" y="198" fill="#f0f6fc">10.0.5.02</text>
+        <text x="230" y="198" fill="#8b949e">scanned</text>
+
+        <!-- Log line 12 -->
+        <text x="15" y="212" fill="#8b949e">14:29:45</text>
+        <text x="70" y="212" fill="#3fb950">OK</text>
+        <text x="125" y="212" fill="#f0f6fc">10.0.1.99</text>
+        <text x="230" y="212" fill="#8b949e">allowed</text>
+      </g>
+    </g>
+
+    <!-- Scroll indicator -->
+    <rect x="425" y="50" width="4" height="120" rx="2" fill="#21262d" />
+    <rect x="425" y="50" width="4" height="30" rx="2" fill="#30363d">
+      <animate attributeName="y" values="50;140;50" dur="12s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- ===== PANEL 4: NETWORK HEALTH (bottom-right) ===== -->
+  <g transform="translate(460, 210)">
+    <rect x="0" y="0" width="280" height="180" rx="4" fill="#161b22" stroke="#21262d" stroke-width="1" />
+    <text x="12" y="18" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600">NETWORK HEALTH</text>
+    <line x1="12" y1="22" x2="268" y2="22" stroke="#21262d" stroke-width="1" />
+
+    <!-- Gauge 1: LATENCY -->
+    <text x="15" y="48" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="9">LATENCY</text>
+    <rect x="15" y="55" width="180" height="12" rx="3" fill="#21262d" />
+    <rect x="15" y="55" width="100" height="12" rx="3" fill="#56d4dd">
+      <animate attributeName="width" values="100;140;110;100" dur="12s" repeatCount="indefinite" />
+    </rect>
+    <text x="210" y="65" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="10" font-weight="600">
+      23ms
+    </text>
+
+    <!-- Gauge 2: BANDWIDTH -->
+    <text x="15" y="90" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="9">BANDWIDTH</text>
+    <rect x="15" y="97" width="180" height="12" rx="3" fill="#21262d" />
+    <rect x="15" y="97" width="150" height="12" rx="3" fill="#58a6ff">
+      <animate attributeName="width" values="150;175;140;150" dur="12s" repeatCount="indefinite" />
+    </rect>
+    <text x="210" y="107" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="10" font-weight="600">
+      6.2 Gbps
+    </text>
+
+    <!-- Gauge 3: PACKET LOSS -->
+    <text x="15" y="132" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="9">PACKET LOSS</text>
+    <rect x="15" y="139" width="180" height="12" rx="3" fill="#21262d" />
+    <rect x="15" y="139" width="8" height="12" rx="3" fill="#3fb950">
+      <animate attributeName="width" values="8;12;6;8" dur="12s" repeatCount="indefinite" />
+    </rect>
+    <text x="210" y="149" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="10" font-weight="600">
+      0.01%
+    </text>
+
+    <!-- Gauge 4: UPTIME -->
+    <text x="15" y="170" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="9">UPTIME</text>
+    <rect x="15" y="177" width="180" height="12" rx="3" fill="#21262d" />
+    <rect x="15" y="177" width="178" height="12" rx="3" fill="#3fb950">
+      <animate attributeName="width" values="178;178;175;178" dur="12s" repeatCount="indefinite" />
+    </rect>
+    <text x="210" y="187" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="10" font-weight="600">
+      99.97%
+    </text>
+  </g>
+
+  <!-- Divider lines between panels (subtle) -->
+  <line x1="10" y1="200" x2="730" y2="200" stroke="#21262d" stroke-width="1" />
+</svg>

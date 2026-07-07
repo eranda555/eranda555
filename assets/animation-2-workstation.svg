@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="100%" height="100%">
+  <defs>
+    <style>
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    </style>
+    <!-- Screen glow gradients (only allowed gradient) -->
+    <radialGradient id="glow-left" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow-center" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow-right" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Clip path for terminal scrolling -->
+    <clipPath id="terminal-clip">
+      <rect x="258" y="50" width="204" height="155" />
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="300" fill="#0d1117" />
+
+  <!-- Desk surface -->
+  <line x1="20" y1="250" x2="680" y2="250" stroke="#30363d" stroke-width="1.5" />
+
+  <!-- ===== LEFT MONITOR ===== -->
+  <g transform="translate(40, 30)">
+    <!-- Glow behind -->
+    <circle cx="100" cy="100" r="120" fill="url(#glow-left)" />
+    <!-- Bezel -->
+    <rect x="0" y="0" width="200" height="200" rx="4" fill="#21262d" />
+    <!-- Screen -->
+    <rect x="8" y="8" width="184" height="184" rx="2" fill="#0d1117" />
+    <!-- Title bar -->
+    <text x="10" y="20" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="600">TOPOLOGY MAP</text>
+    <line x1="10" y1="24" x2="190" y2="24" stroke="#21262d" stroke-width="1" />
+
+    <!-- Topology Node 1 -->
+    <circle cx="60" cy="70" r="10" fill="none" stroke="#58a6ff" stroke-width="1.5" />
+    <circle cx="60" cy="70" r="3" fill="#58a6ff" />
+    <text x="60" y="90" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="6" text-anchor="middle">R1</text>
+
+    <!-- Topology Node 2 -->
+    <circle cx="140" cy="60" r="10" fill="none" stroke="#58a6ff" stroke-width="1.5" />
+    <circle cx="140" cy="60" r="3" fill="#58a6ff" />
+    <text x="140" y="80" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="6" text-anchor="middle">R2</text>
+
+    <!-- Topology Node 3 -->
+    <circle cx="50" cy="140" r="10" fill="none" stroke="#58a6ff" stroke-width="1.5" />
+    <circle cx="50" cy="140" r="3" fill="#58a6ff" />
+    <text x="50" y="160" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="6" text-anchor="middle">SW1</text>
+
+    <!-- Topology Node 4 -->
+    <circle cx="140" cy="150" r="10" fill="none" stroke="#58a6ff" stroke-width="1.5" />
+    <circle cx="140" cy="150" r="3" fill="#58a6ff" />
+    <text x="140" y="170" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="6" text-anchor="middle">SRV1</text>
+
+    <!-- Connection lines -->
+    <line x1="70" y1="70" x2="130" y2="60" stroke="#30363d" stroke-width="1" />
+    <line x1="70" y1="70" x2="60" y2="130" stroke="#30363d" stroke-width="1" />
+    <line x1="130" y1="60" x2="130" y2="140" stroke="#30363d" stroke-width="1" />
+    <line x1="60" y1="140" x2="130" y2="140" stroke="#30363d" stroke-width="1" />
+    <line x1="50" y1="150" x2="60" y2="140" stroke="#30363d" stroke-width="1" />
+
+    <!-- Animated data dot on edge R1-R2 -->
+    <circle r="3" fill="#56d4dd">
+      <animateMotion dur="5s" repeatCount="indefinite" begin="0s">
+        <mpath>
+          <path d="M70,70 L130,60" />
+        </mpath>
+      </animateMotion>
+    </circle>
+
+    <!-- Animated data dot on edge SW1-SRV1 -->
+    <circle r="3" fill="#56d4dd">
+      <animateMotion dur="5s" repeatCount="indefinite" begin="2.5s">
+        <mpath>
+          <path d="M60,140 L50,150" />
+        </mpath>
+      </animateMotion>
+    </circle>
+  </g>
+
+  <!-- ===== CENTER MONITOR ===== -->
+  <g transform="translate(250, 20)">
+    <!-- Glow behind -->
+    <circle cx="120" cy="110" r="130" fill="url(#glow-center)" />
+    <!-- Bezel -->
+    <rect x="0" y="0" width="240" height="220" rx="4" fill="#21262d" />
+    <!-- Screen -->
+    <rect x="10" y="10" width="220" height="200" rx="2" fill="#0d1117" />
+    <!-- Title bar -->
+    <text x="15" y="25" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="600">TERMINAL</text>
+    <line x1="15" y1="30" x2="230" y2="30" stroke="#21262d" stroke-width="1" />
+
+    <!-- Scrolling terminal text -->
+    <g clip-path="url(#terminal-clip)">
+      <g font-family="'Courier New', Consolas, monospace" font-size="9" fill="#3fb950">
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,-100" dur="12s" repeatCount="indefinite" />
+        <text x="15" y="50">$ ping -c 4 10.0.1.1</text>
+        <text x="15" y="65">64 bytes from 10.0.1.1: icmp_seq=1</text>
+        <text x="15" y="80">64 bytes from 10.0.1.1: icmp_seq=2</text>
+        <text x="15" y="95">64 bytes from 10.0.1.1: icmp_seq=3</text>
+        <text x="15" y="110">64 bytes from 10.0.1.1: icmp_seq=4</text>
+        <text x="15" y="125">rtt min/avg/max = 1.234/1.567/2.001 ms</text>
+        <text x="15" y="140">--- statistics ---</text>
+        <text x="15" y="155">4 packets transmitted, 4 received</text>
+        <text x="15" y="170">0% packet loss</text>
+        <text x="15" y="185">$</text>
+        <text x="15" y="200">$ nmap -sV 10.0.1.0/24</text>
+        <text x="15" y="215">Starting Nmap 7.80</text>
+        <text x="15" y="230">Host discovery...</text>
+        <text x="15" y="245">4 hosts up</text>
+        <text x="15" y="260">$</text>
+      </g>
+    </g>
+
+    <!-- Scrolling cursor indicator -->
+    <rect x="220" y="45" width="6" height="10" fill="#3fb950" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.1;0.7" dur="1s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- ===== RIGHT MONITOR ===== -->
+  <g transform="translate(520, 30)">
+    <!-- Glow behind -->
+    <circle cx="90" cy="90" r="110" fill="url(#glow-right)" />
+    <!-- Bezel -->
+    <rect x="0" y="0" width="180" height="180" rx="4" fill="#21262d" />
+    <!-- Screen -->
+    <rect x="8" y="8" width="164" height="164" rx="2" fill="#0d1117" />
+    <!-- Title bar -->
+    <text x="12" y="22" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="600">SECURITY</text>
+    <line x1="12" y1="26" x2="170" y2="26" stroke="#21262d" stroke-width="1" />
+
+    <!-- Shield icon -->
+    <g transform="translate(75, 38)">
+      <polygon points="12,0 24,6 24,24 12,30 0,24 0,6" fill="none" stroke="#3fb950" stroke-width="1.5" />
+      <polyline points="6,14 10,18 18,8" fill="none" stroke="#3fb950" stroke-width="1.5" />
+    </g>
+
+    <!-- Status bar 1 -->
+    <text x="15" y="90" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="7">FIREWALL</text>
+    <rect x="15" y="95" width="130" height="8" rx="2" fill="#21262d" />
+    <rect x="15" y="95" width="120" height="8" rx="2" fill="#3fb950">
+      <animate attributeName="width" values="120;115;118;120" dur="4s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Status bar 2 -->
+    <text x="15" y="118" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="7">IDS/IPS</text>
+    <rect x="15" y="123" width="130" height="8" rx="2" fill="#21262d" />
+    <rect x="15" y="123" width="110" height="8" rx="2" fill="#3fb950">
+      <animate attributeName="width" values="110;108;112;110" dur="4s" begin="0.5s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Threats counter -->
+    <text x="15" y="148" fill="#3fb950" font-family="'Courier New', Consolas, monospace" font-size="8">THREATS: 0</text>
+
+    <!-- Line chart - health trend -->
+    <polyline fill="none" stroke="#56d4dd" stroke-width="1.5" points="15,168 35,162 55,166 75,158 95,160 115,155 135,150 155,152">
+      <animate attributeName="points" values="15,168 35,162 55,166 75,158 95,160 115,155 135,150 155,152;15,168 35,165 55,160 75,163 95,157 115,158 135,153 155,155;15,168 35,162 55,166 75,158 95,160 115,155 135,150 155,152" dur="8s" repeatCount="indefinite" />
+    </polyline>
+    <text x="15" y="175" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="6">0% threats</text>
+  </g>
+
+  <!-- ===== KEYBOARD ===== -->
+  <g transform="translate(250, 255)">
+    <!-- Base -->
+    <rect x="0" y="0" width="160" height="35" rx="3" fill="#161b22" stroke="#30363d" stroke-width="1" />
+    <!-- Key rows -->
+    <line x1="10" y1="8" x2="150" y2="8" stroke="#21262d" stroke-width="1" />
+    <line x1="10" y1="14" x2="150" y2="14" stroke="#21262d" stroke-width="1" />
+    <line x1="10" y1="20" x2="150" y2="20" stroke="#21262d" stroke-width="1" />
+    <line x1="10" y1="26" x2="150" y2="26" stroke="#21262d" stroke-width="1" />
+    <!-- Space bar -->
+    <rect x="50" y="8" width="60" height="6" rx="1" fill="#21262d" stroke="#30363d" stroke-width="0.5" />
+    <!-- Small keys -->
+    <rect x="10" y="2" width="12" height="5" rx="0.5" fill="#21262d" stroke="#30363d" stroke-width="0.5" />
+    <rect x="25" y="2" width="12" height="5" rx="0.5" fill="#21262d" stroke="#30363d" stroke-width="0.5" />
+    <rect x="40" y="2" width="12" height="5" rx="0.5" fill="#21262d" stroke="#30363d" stroke-width="0.5" />
+    <rect x="130" y="2" width="20" height="5" rx="0.5" fill="#21262d" stroke="#30363d" stroke-width="0.5" />
+  </g>
+
+  <!-- ===== COFFEE MUG ===== -->
+  <g transform="translate(610, 240)">
+    <!-- Cup body -->
+    <path d="M0,5 L5,30 L25,30 L30,5 Z" fill="none" stroke="#8b949e" stroke-width="1.5" />
+    <!-- Handle -->
+    <path d="M28,12 Q40,12 40,18 Q40,24 28,24" fill="none" stroke="#8b949e" stroke-width="1.5" />
+    <!-- Steam -->
+    <path d="M8,2 Q12,-4 8,-8" fill="none" stroke="#8b949e" stroke-width="1" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite" />
+    </path>
+    <path d="M15,0 Q19,-6 15,-10" fill="none" stroke="#8b949e" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.05;0.3" dur="3s" begin="1s" repeatCount="indefinite" />
+    </path>
+  </g>
+</svg>

@@ -1,4 +1,11 @@
-<img src="assets/banner.svg" alt="Eranda Vishwa Dayarathna - Aspiring Network Engineer">
+<p align="center">
+  <img src="assets/animation-1-hero.svg" alt="Network Topology Banner" width="100%" max-width="900px">
+</p>
+
+# Eranda Vishwa Dayarathna
+
+**ICT Undergraduate — University of Kelaniya, Sri Lanka**  
+*Specializing in Computer Systems Networking & Telecommunications*
 
 **[LinkedIn](https://www.linkedin.com/in/eranda-vishwa-66a3b1275/)** · **[Portfolio](https://eranda555.github.io)** · **[Email](mailto:erandavishwa555@gmail.com)**
 
@@ -8,11 +15,11 @@
 
 ## About Me
 
-I'm an ICT undergraduate at the **University of Kelaniya**, specializing in **Computer Systems Networking & Telecommunications**. My passion lies at the intersection of **network engineering** and **cybersecurity** — designing resilient network infrastructures while understanding how to defend them.
+<p align="center">
+  <img src="assets/animation-2-workstation.svg" alt="Network Engineer Workstation" width="100%" max-width="700px">
+</p>
 
-Beyond the technical stack, I serve as **Co-Director of Regional Engagement Avenue** at the **Rotaract Club of University of Kelaniya**, where I lead community-driven initiatives that bridge technology with social impact.
-
-I believe in building a strong foundation: mastering how data moves across networks (routing, switching, TCP/IP), securing those pathways (firewalls, monitoring, threat analysis), and automating everything possible (Linux, Bash, scripting). Every project I take on — from enterprise network designs to full-stack applications — reflects this systems-thinking mindset.
+ICT undergraduate at the **University of Kelaniya** who designs, secures, and automates network infrastructure. I build resilient enterprise networks (routing, switching, TCP/IP), harden them against threats, and script everything in between. Outside the terminal, I lead community-driven tech initiatives as **Co-Director of Regional Engagement** at the Rotaract Club — because resilient systems need resilient communities. Every project I take on reflects a single philosophy: master how data moves, secure how it's protected, and automate the rest.
 
 ---
 
@@ -26,6 +33,10 @@ administration:  [System Administration, CLI/Bash]
 version_control: [Git, GitHub]
 cloud:           [Cloud Infrastructure (learning)]
 ```
+
+<p align="center">
+  <img src="assets/animation-3-cloud-stack.svg" alt="Cloud Architecture Stack" width="100%" max-width="400px">
+</p>
 
 ## Development & Other Technologies
 
@@ -79,24 +90,24 @@ A feature-rich scientific calculator modeled after Casio-class devices. Supports
 └──  Cloud Technologies (AWS / Azure fundamentals)
 ```
 
+<p align="center">
+  <img src="assets/animation-4-noc-dashboard.svg" alt="NOC Dashboard" width="100%" max-width="750px">
+</p>
+
 ---
 
-## Contribution Activity
+## GitHub Activity
 
-<img src="profile-3d-contrib/profile-night-green.svg" alt="3D Contribution Graph">
-
-*Updated daily via GitHub Actions.*
-
-
+---
 
 ## Let's Connect
 
 I'm always open to discussing network engineering, cybersecurity, or potential collaborations — especially if you're working on something in the Sri Lankan tech space.
 
-<a href="mailto:erandavishwa555@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat&logo=gmail&logoColor=white" alt="Email"></a>&nbsp;&nbsp;
-<a href="https://www.linkedin.com/in/eranda-vishwa-66a3b1275/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;&nbsp;
-<a href="https://eranda555.github.io"><img src="https://img.shields.io/badge/Portfolio-3fb950?style=flat&logo=google-chrome&logoColor=white" alt="Portfolio"></a>&nbsp;&nbsp;
-<a href="https://github.com/eranda555"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub"></a>
+-  **Email:** [erandavishwa555@gmail.com](mailto:erandavishwa555@gmail.com)
+-  **LinkedIn:** [linkedin.com/in/eranda-vishwa-66a3b1275](https://www.linkedin.com/in/eranda-vishwa-66a3b1275/)
+-  **Portfolio:** [eranda555.github.io](https://eranda555.github.io)
+-  **GitHub:** [github.com/eranda555](https://github.com/eranda555)
 
 ---
 
