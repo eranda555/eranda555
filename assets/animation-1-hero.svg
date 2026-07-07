@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" height="auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" height="100%">
   <defs>
     <style>
       @media (prefers-reduced-motion: reduce) {
@@ -99,7 +99,7 @@
 
   <!-- ===== TITLE AREA ===== -->
   <text x="500" y="44" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="38" font-weight="bold" text-anchor="middle" letter-spacing="3" filter="url(#text-glow)">ERANDA VISHWA DAYARATHNA</text>
-  <text x="500" y="72" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="14" text-anchor="middle" letter-spacing="1.5">Network Engineering &middot; Cybersecurity &middot; Cloud Infrastructure</text>
+  <text x="500" y="72" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="14" text-anchor="middle" letter-spacing="1.5">Network Engineering &#183; Cybersecurity &#183; Cloud Infrastructure</text>
 
   <!-- Decorative divider -->
   <line x1="150" y1="90" x2="850" y2="90" stroke="#30363d" stroke-width="0.5" opacity="0.4" />
@@ -169,62 +169,42 @@
 
   <!-- Segment 1: Internet → Firewall (blue packets) -->
   <circle class="packet" r="5" fill="#58a6ff" filter="url(#packet-glow)">
-    <animateMotion dur="3s" repeatCount="indefinite" begin="0s">
-      <mpath><path d="M180,172 L315,172" /></mpath>
-    </animateMotion>
+    <animateMotion dur="3s" repeatCount="indefinite" begin="0s" path="M180,172 L315,172" />
   </circle>
   <circle class="packet" r="4.5" fill="#58a6ff" filter="url(#packet-glow)">
-    <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s">
-      <mpath><path d="M180,172 L315,172" /></mpath>
-    </animateMotion>
+    <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s" path="M180,172 L315,172" />
   </circle>
 
   <!-- Segment 2: Firewall → Switch (green encrypted packets) -->
   <circle class="packet" r="5" fill="#3fb950" filter="url(#packet-glow)">
-    <animateMotion dur="3s" repeatCount="indefinite" begin="1s">
-      <mpath><path d="M385,172 L510,172" /></mpath>
-    </animateMotion>
+    <animateMotion dur="3s" repeatCount="indefinite" begin="1s" path="M385,172 L510,172" />
   </circle>
   <circle class="packet" r="4.5" fill="#3fb950" filter="url(#packet-glow)">
-    <animateMotion dur="3s" repeatCount="indefinite" begin="2.5s">
-      <mpath><path d="M385,172 L510,172" /></mpath>
-    </animateMotion>
+    <animateMotion dur="3s" repeatCount="indefinite" begin="2.5s" path="M385,172 L510,172" />
   </circle>
 
   <!-- Segment 3: Switch → Servers (cyan routing packets) -->
   <circle class="packet" r="5" fill="#56d4dd" filter="url(#packet-glow)">
-    <animateMotion dur="3s" repeatCount="indefinite" begin="2s">
-      <mpath><path d="M590,172 L695,172" /></mpath>
-    </animateMotion>
+    <animateMotion dur="3s" repeatCount="indefinite" begin="2s" path="M590,172 L695,172" />
   </circle>
   <circle class="packet" r="4.5" fill="#56d4dd" filter="url(#packet-glow)">
-    <animateMotion dur="3s" repeatCount="indefinite" begin="3.5s">
-      <mpath><path d="M590,172 L695,172" /></mpath>
-    </animateMotion>
+    <animateMotion dur="3s" repeatCount="indefinite" begin="3.5s" path="M590,172 L695,172" />
   </circle>
 
   <!-- Segment 4: Servers → Endpoints (purple processing packets) -->
   <circle class="packet" r="5" fill="#bc8cff" filter="url(#packet-glow)">
-    <animateMotion dur="3s" repeatCount="indefinite" begin="3s">
-      <mpath><path d="M765,172 L875,172" /></mpath>
-    </animateMotion>
+    <animateMotion dur="3s" repeatCount="indefinite" begin="3s" path="M765,172 L875,172" />
   </circle>
   <circle class="packet" r="4.5" fill="#bc8cff" filter="url(#packet-glow)">
-    <animateMotion dur="3s" repeatCount="indefinite" begin="4.5s">
-      <mpath><path d="M765,172 L875,172" /></mpath>
-    </animateMotion>
+    <animateMotion dur="3s" repeatCount="indefinite" begin="4.5s" path="M765,172 L875,172" />
   </circle>
 
   <!-- Express end-to-end packets -->
   <circle class="packet" r="4" fill="#58a6ff" filter="url(#packet-glow)">
-    <animateMotion dur="12s" repeatCount="indefinite" begin="0s">
-      <mpath><path d="M180,172 L315,172 L385,172 L510,172 L590,172 L695,172 L765,172 L875,172" /></mpath>
-    </animateMotion>
+    <animateMotion dur="12s" repeatCount="indefinite" begin="0s" path="M180,172 L315,172 L385,172 L510,172 L590,172 L695,172 L765,172 L875,172" />
   </circle>
   <circle class="packet" r="3.5" fill="#3fb950" filter="url(#packet-glow)">
-    <animateMotion dur="12s" repeatCount="indefinite" begin="6s">
-      <mpath><path d="M180,172 L315,172 L385,172 L510,172 L590,172 L695,172 L765,172 L875,172" /></mpath>
-    </animateMotion>
+    <animateMotion dur="12s" repeatCount="indefinite" begin="6s" path="M180,172 L315,172 L385,172 L510,172 L590,172 L695,172 L765,172 L875,172" />
   </circle>
 
   <!-- ===== DEVICES ===== -->
@@ -397,39 +377,27 @@
   <g class="particle">
     <!-- Particle 1: curves from upper-left to lower-center -->
     <circle r="1.5" fill="#58a6ff" opacity="0.6">
-      <animateMotion dur="8s" repeatCount="indefinite" begin="0s">
-        <mpath><path d="M40,200 Q200,310 400,230" /></mpath>
-      </animateMotion>
+      <animateMotion dur="8s" repeatCount="indefinite" begin="0s" path="M40,200 Q200,310 400,230" />
     </circle>
     <!-- Particle 2: curves from upper-right to lower-center -->
     <circle r="1.5" fill="#56d4dd" opacity="0.5">
-      <animateMotion dur="10s" repeatCount="indefinite" begin="1.2s">
-        <mpath><path d="M940,210 Q720,340 520,250" /></mpath>
-      </animateMotion>
+      <animateMotion dur="10s" repeatCount="indefinite" begin="1.2s" path="M940,210 Q720,340 520,250" />
     </circle>
     <!-- Particle 3: mid-left to mid-right -->
     <circle r="1" fill="#3fb950" opacity="0.5">
-      <animateMotion dur="7s" repeatCount="indefinite" begin="2.5s">
-        <mpath><path d="M280,310 Q480,260 680,320" /></mpath>
-      </animateMotion>
+      <animateMotion dur="7s" repeatCount="indefinite" begin="2.5s" path="M280,310 Q480,260 680,320" />
     </circle>
     <!-- Particle 4: lower sweep -->
     <circle r="1.5" fill="#bc8cff" opacity="0.4">
-      <animateMotion dur="9s" repeatCount="indefinite" begin="3.8s">
-        <mpath><path d="M580,360 Q380,300 180,370" /></mpath>
-      </animateMotion>
+      <animateMotion dur="9s" repeatCount="indefinite" begin="3.8s" path="M580,360 Q380,300 180,370" />
     </circle>
     <!-- Particle 5: diagonal cross -->
     <circle r="1" fill="#d29922" opacity="0.5">
-      <animateMotion dur="6s" repeatCount="indefinite" begin="4.5s">
-        <mpath><path d="M780,310 Q580,270 380,340" /></mpath>
-      </animateMotion>
+      <animateMotion dur="6s" repeatCount="indefinite" begin="4.5s" path="M780,310 Q580,270 380,340" />
     </circle>
     <!-- Particle 6: slow drift -->
     <circle r="1.5" fill="#58a6ff" opacity="0.35">
-      <animateMotion dur="11s" repeatCount="indefinite" begin="1.8s">
-        <mpath><path d="M120,360 Q480,210 850,350" /></mpath>
-      </animateMotion>
+      <animateMotion dur="11s" repeatCount="indefinite" begin="1.8s" path="M120,360 Q480,210 850,350" />
     </circle>
   </g>
 </svg>
