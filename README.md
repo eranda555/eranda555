@@ -8,10 +8,34 @@
 *Specializing in Computer Systems Networking & Telecommunications*
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/eranda-vishwa-66a3b1275/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;&nbsp;
-  <a href="https://github.com/eranda555"><img src="https://img.shields.io/badge/GitHub-333333?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>&nbsp;&nbsp;
-  <a href="https://eranda555.github.io"><img src="https://img.shields.io/badge/Portfolio-56d4dd?style=for-the-badge&logo=globe&logoColor=0d1117" alt="Portfolio"></a>&nbsp;&nbsp;
-  <a href="mailto:erandavishwa555@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+  <a href="https://www.linkedin.com/in/eranda-vishwa-66a3b1275/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LinkedIn-161b22?style=for-the-badge&logo=linkedin&logoColor=0077B5">
+      <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/LinkedIn-f0f6fc?style=for-the-badge&logo=linkedin&logoColor=0077B5">
+      <img src="https://img.shields.io/badge/LinkedIn-161b22?style=for-the-badge&logo=linkedin&logoColor=0077B5" alt="LinkedIn">
+    </picture>
+  </a>&nbsp;&nbsp;
+  <a href="https://github.com/eranda555">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/GitHub-161b22?style=for-the-badge&logo=github&logoColor=f0f6fc">
+      <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/GitHub-f0f6fc?style=for-the-badge&logo=github&logoColor=333333">
+      <img src="https://img.shields.io/badge/GitHub-161b22?style=for-the-badge&logo=github&logoColor=f0f6fc" alt="GitHub">
+    </picture>
+  </a>&nbsp;&nbsp;
+  <a href="https://eranda555.github.io">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Portfolio-161b22?style=for-the-badge&logo=globe&logoColor=56d4dd">
+      <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Portfolio-f0f6fc?style=for-the-badge&logo=globe&logoColor=56d4dd">
+      <img src="https://img.shields.io/badge/Portfolio-161b22?style=for-the-badge&logo=globe&logoColor=56d4dd" alt="Portfolio">
+    </picture>
+  </a>&nbsp;&nbsp;
+  <a href="mailto:erandavishwa555@gmail.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Email-161b22?style=for-the-badge&logo=gmail&logoColor=EA4335">
+      <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Email-f0f6fc?style=for-the-badge&logo=gmail&logoColor=EA4335">
+      <img src="https://img.shields.io/badge/Email-161b22?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email">
+    </picture>
+  </a>
 </p>
 
 > `network_engineer@eranda:~$` Designing, securing, and optimizing network infrastructure — one packet at a time.
@@ -110,10 +134,34 @@ A feature-rich scientific calculator modeled after Casio-class devices. Supports
 I'm always open to discussing network engineering, cybersecurity, or potential collaborations — especially if you're working on something in the Sri Lankan tech space.
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/eranda-vishwa-66a3b1275/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;&nbsp;
-  <a href="https://github.com/eranda555"><img src="https://img.shields.io/badge/GitHub-333333?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>&nbsp;&nbsp;
-  <a href="https://eranda555.github.io"><img src="https://img.shields.io/badge/Portfolio-56d4dd?style=for-the-badge&logo=globe&logoColor=0d1117" alt="Portfolio"></a>&nbsp;&nbsp;
-  <a href="mailto:erandavishwa555@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+  <a href="https://www.linkedin.com/in/eranda-vishwa-66a3b1275/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LinkedIn-161b22?style=for-the-badge&logo=linkedin&logoColor=0077B5">
+      <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/LinkedIn-f0f6fc?style=for-the-badge&logo=linkedin&logoColor=0077B5">
+      <img src="https://img.shields.io/badge/LinkedIn-161b22?style=for-the-badge&logo=linkedin&logoColor=0077B5" alt="LinkedIn">
+    </picture>
+  </a>&nbsp;&nbsp;
+  <a href="https://github.com/eranda555">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/GitHub-161b22?style=for-the-badge&logo=github&logoColor=f0f6fc">
+      <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/GitHub-f0f6fc?style=for-the-badge&logo=github&logoColor=333333">
+      <img src="https://img.shields.io/badge/GitHub-161b22?style=for-the-badge&logo=github&logoColor=f0f6fc" alt="GitHub">
+    </picture>
+  </a>&nbsp;&nbsp;
+  <a href="https://eranda555.github.io">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Portfolio-161b22?style=for-the-badge&logo=globe&logoColor=56d4dd">
+      <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Portfolio-f0f6fc?style=for-the-badge&logo=globe&logoColor=56d4dd">
+      <img src="https://img.shields.io/badge/Portfolio-161b22?style=for-the-badge&logo=globe&logoColor=56d4dd" alt="Portfolio">
+    </picture>
+  </a>&nbsp;&nbsp;
+  <a href="mailto:erandavishwa555@gmail.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Email-161b22?style=for-the-badge&logo=gmail&logoColor=EA4335">
+      <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Email-f0f6fc?style=for-the-badge&logo=gmail&logoColor=EA4335">
+      <img src="https://img.shields.io/badge/Email-161b22?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email">
+    </picture>
+  </a>
 </p>
 
 ---
