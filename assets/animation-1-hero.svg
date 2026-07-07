@@ -1,137 +1,435 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" height="auto">
   <defs>
     <style>
       @media (prefers-reduced-motion: reduce) {
-        * { animation: none !important; }
+        .packet, .particle, .pulse, .binary-digit, .scan-arc,
+        .lock-icon, .glow-pulse, .line-pulse, .led-blink { display: none; }
       }
     </style>
+
+    <!-- Glow filter for data packets -->
+    <filter id="packet-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow behind devices -->
+    <filter id="device-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Text glow for the name -->
+    <filter id="text-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Radial gradient glows for each device -->
+    <radialGradient id="glow-blue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-orange" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d29922" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#d29922" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#56d4dd" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#56d4dd" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#bc8cff" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3fb950" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#3fb950" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Linear gradients for connection line segments -->
+    <linearGradient id="line-blue-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff" />
+      <stop offset="100%" stop-color="#d29922" />
+    </linearGradient>
+
+    <linearGradient id="line-orange-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d29922" />
+      <stop offset="40%" stop-color="#3fb950" />
+      <stop offset="100%" stop-color="#56d4dd" />
+    </linearGradient>
+
+    <linearGradient id="line-cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#56d4dd" />
+      <stop offset="100%" stop-color="#bc8cff" />
+    </linearGradient>
+
+    <linearGradient id="line-purple-green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#bc8cff" />
+      <stop offset="100%" stop-color="#3fb950" />
+    </linearGradient>
+
+    <!-- Subtle circuit-board grid patterns -->
+    <pattern id="grid-large" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 0 40" fill="none" stroke="#161b22" stroke-width="1" />
+    </pattern>
+
+    <pattern id="grid-small" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M10 0 L0 0 0 10" fill="none" stroke="#111820" stroke-width="0.5" />
+    </pattern>
   </defs>
 
-  <!-- Background -->
-  <rect width="900" height="200" fill="#0d1117" />
+  <!-- ===== BACKGROUND ===== -->
+  <rect width="1000" height="420" fill="#0d1117" />
+  <rect width="1000" height="420" fill="url(#grid-large)" opacity="0.6" />
+  <rect width="1000" height="420" fill="url(#grid-small)" opacity="0.5" />
 
-  <!-- Title -->
-  <text x="450" y="32" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="22" font-weight="bold" text-anchor="middle" letter-spacing="2">ERANDA VISHWA DAYARATHNA</text>
-  <text x="450" y="52" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" letter-spacing="1">Network Engineering · Cybersecurity · Cloud Infrastructure</text>
+  <!-- ===== TITLE AREA ===== -->
+  <text x="500" y="44" fill="#f0f6fc" font-family="'Courier New', Consolas, monospace" font-size="38" font-weight="bold" text-anchor="middle" letter-spacing="3" filter="url(#text-glow)">ERANDA VISHWA DAYARATHNA</text>
+  <text x="500" y="72" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="14" text-anchor="middle" letter-spacing="1.5">Network Engineering &middot; Cybersecurity &middot; Cloud Infrastructure</text>
 
-  <!-- Connection lines (horizontal paths between devices) -->
-  <!-- ISP to Firewall -->
-  <line x1="130" y1="120" x2="280" y2="120" stroke="#30363d" stroke-width="2" />
-  <line x1="130" y1="120" x2="280" y2="120" stroke="#58a6ff" stroke-width="2" opacity="0.3">
-    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" begin="0s" repeatCount="indefinite" />
+  <!-- Decorative divider -->
+  <line x1="150" y1="90" x2="850" y2="90" stroke="#30363d" stroke-width="0.5" opacity="0.4" />
+
+  <!-- ===== BACKGROUND BINARY DIGITS ===== -->
+  <g class="binary-digit">
+    <text x="55" y="130" fill="#58a6ff" font-family="'Courier New', monospace" font-size="8" opacity="0">1
+      <animate attributeName="opacity" values="0;0.18;0" dur="5s" begin="0s" repeatCount="indefinite" />
+    </text>
+    <text x="945" y="140" fill="#58a6ff" font-family="'Courier New', monospace" font-size="9" opacity="0">0
+      <animate attributeName="opacity" values="0;0.15;0" dur="6s" begin="1.2s" repeatCount="indefinite" />
+    </text>
+    <text x="280" y="260" fill="#bc8cff" font-family="'Courier New', monospace" font-size="7" opacity="0">1
+      <animate attributeName="opacity" values="0;0.12;0" dur="7s" begin="2s" repeatCount="indefinite" />
+    </text>
+    <text x="710" y="285" fill="#56d4dd" font-family="'Courier New', monospace" font-size="8" opacity="0">0
+      <animate attributeName="opacity" values="0;0.14;0" dur="4s" begin="0.6s" repeatCount="indefinite" />
+    </text>
+    <text x="430" y="315" fill="#d29922" font-family="'Courier New', monospace" font-size="7" opacity="0">1
+      <animate attributeName="opacity" values="0;0.12;0" dur="6.5s" begin="3s" repeatCount="indefinite" />
+    </text>
+    <text x="140" y="345" fill="#3fb950" font-family="'Courier New', monospace" font-size="8" opacity="0">0
+      <animate attributeName="opacity" values="0;0.14;0" dur="5.5s" begin="1.8s" repeatCount="indefinite" />
+    </text>
+    <text x="830" y="325" fill="#f778ba" font-family="'Courier New', monospace" font-size="6" opacity="0">1
+      <animate attributeName="opacity" values="0;0.08;0" dur="8s" begin="0.3s" repeatCount="indefinite" />
+    </text>
+    <text x="510" y="375" fill="#58a6ff" font-family="'Courier New', monospace" font-size="7" opacity="0">0
+      <animate attributeName="opacity" values="0;0.1;0" dur="6s" begin="4.5s" repeatCount="indefinite" />
+    </text>
+    <text x="190" y="280" fill="#f778ba" font-family="'Courier New', monospace" font-size="7" opacity="0">1
+      <animate attributeName="opacity" values="0;0.09;0" dur="7.5s" begin="2.7s" repeatCount="indefinite" />
+    </text>
+    <text x="650" y="355" fill="#58a6ff" font-family="'Courier New', monospace" font-size="8" opacity="0">0
+      <animate attributeName="opacity" values="0;0.11;0" dur="5s" begin="0.9s" repeatCount="indefinite" />
+    </text>
+  </g>
+
+  <!-- ===== CONNECTION LINES ===== -->
+  <!-- Each segment has a subtle base line + animated gradient glow line -->
+
+  <!-- Segment 1: Internet (x=180) to Firewall (x=315) -->
+  <line x1="180" y1="172" x2="315" y2="172" stroke="#30363d" stroke-width="1.5" />
+  <line class="line-pulse" x1="180" y1="172" x2="315" y2="172" stroke="url(#line-blue-orange)" stroke-width="3" opacity="0" stroke-linecap="round">
+    <animate attributeName="opacity" values="0;0.85;0" dur="3s" begin="0s" repeatCount="indefinite" />
   </line>
 
-  <!-- Firewall to Switch -->
-  <line x1="340" y1="120" x2="490" y2="120" stroke="#30363d" stroke-width="2" />
-  <line x1="340" y1="120" x2="490" y2="120" stroke="#58a6ff" stroke-width="2" opacity="0.3">
-    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" begin="1s" repeatCount="indefinite" />
+  <!-- Segment 2: Firewall (x=385) to Switch (x=510) -->
+  <line x1="385" y1="172" x2="510" y2="172" stroke="#30363d" stroke-width="1.5" />
+  <line class="line-pulse" x1="385" y1="172" x2="510" y2="172" stroke="url(#line-orange-cyan)" stroke-width="3" opacity="0" stroke-linecap="round">
+    <animate attributeName="opacity" values="0;0.85;0" dur="3s" begin="1s" repeatCount="indefinite" />
   </line>
 
-  <!-- Switch to Servers -->
-  <line x1="550" y1="120" x2="700" y2="120" stroke="#30363d" stroke-width="2" />
-  <line x1="550" y1="120" x2="700" y2="120" stroke="#58a6ff" stroke-width="2" opacity="0.3">
-    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" begin="2s" repeatCount="indefinite" />
+  <!-- Segment 3: Switch (x=590) to Servers (x=695) -->
+  <line x1="590" y1="172" x2="695" y2="172" stroke="#30363d" stroke-width="1.5" />
+  <line class="line-pulse" x1="590" y1="172" x2="695" y2="172" stroke="url(#line-cyan-purple)" stroke-width="3" opacity="0" stroke-linecap="round">
+    <animate attributeName="opacity" values="0;0.85;0" dur="3s" begin="2s" repeatCount="indefinite" />
   </line>
 
-  <!-- DATA PACKETS with animateMotion -->
+  <!-- Segment 4: Servers (x=765) to Endpoints (x=875) -->
+  <line x1="765" y1="172" x2="875" y2="172" stroke="#30363d" stroke-width="1.5" />
+  <line class="line-pulse" x1="765" y1="172" x2="875" y2="172" stroke="url(#line-purple-green)" stroke-width="3" opacity="0" stroke-linecap="round">
+    <animate attributeName="opacity" values="0;0.85;0" dur="3s" begin="3s" repeatCount="indefinite" />
+  </line>
 
-  <!-- Packet 1: ISP to Firewall -->
-  <circle r="4" fill="#56d4dd">
-    <animateMotion dur="4s" repeatCount="indefinite" begin="0s">
-      <mpath>
-        <path d="M130,120 L280,120" />
-      </mpath>
+  <!-- ===== DATA PACKETS (8 segment + 2 express) ===== -->
+
+  <!-- Segment 1: Internet → Firewall (blue packets) -->
+  <circle class="packet" r="5" fill="#58a6ff" filter="url(#packet-glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="0s">
+      <mpath><path d="M180,172 L315,172" /></mpath>
+    </animateMotion>
+  </circle>
+  <circle class="packet" r="4.5" fill="#58a6ff" filter="url(#packet-glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s">
+      <mpath><path d="M180,172 L315,172" /></mpath>
     </animateMotion>
   </circle>
 
-  <!-- Packet 2: Firewall to Switch -->
-  <circle r="4" fill="#56d4dd">
-    <animateMotion dur="4s" repeatCount="indefinite" begin="1s">
-      <mpath>
-        <path d="M340,120 L490,120" />
-      </mpath>
+  <!-- Segment 2: Firewall → Switch (green encrypted packets) -->
+  <circle class="packet" r="5" fill="#3fb950" filter="url(#packet-glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="1s">
+      <mpath><path d="M385,172 L510,172" /></mpath>
+    </animateMotion>
+  </circle>
+  <circle class="packet" r="4.5" fill="#3fb950" filter="url(#packet-glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="2.5s">
+      <mpath><path d="M385,172 L510,172" /></mpath>
     </animateMotion>
   </circle>
 
-  <!-- Packet 3: Switch to Servers -->
-  <circle r="4" fill="#56d4dd">
-    <animateMotion dur="4s" repeatCount="indefinite" begin="2s">
-      <mpath>
-        <path d="M550,120 L700,120" />
-      </mpath>
+  <!-- Segment 3: Switch → Servers (cyan routing packets) -->
+  <circle class="packet" r="5" fill="#56d4dd" filter="url(#packet-glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="2s">
+      <mpath><path d="M590,172 L695,172" /></mpath>
+    </animateMotion>
+  </circle>
+  <circle class="packet" r="4.5" fill="#56d4dd" filter="url(#packet-glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="3.5s">
+      <mpath><path d="M590,172 L695,172" /></mpath>
     </animateMotion>
   </circle>
 
-  <!-- Packet 4: End-to-end express -->
-  <circle r="3" fill="#3fb950">
-    <animateMotion dur="16s" repeatCount="indefinite" begin="0s">
-      <mpath>
-        <path d="M130,120 L280,120 L340,120 L490,120 L550,120 L700,120" />
-      </mpath>
+  <!-- Segment 4: Servers → Endpoints (purple processing packets) -->
+  <circle class="packet" r="5" fill="#bc8cff" filter="url(#packet-glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="3s">
+      <mpath><path d="M765,172 L875,172" /></mpath>
+    </animateMotion>
+  </circle>
+  <circle class="packet" r="4.5" fill="#bc8cff" filter="url(#packet-glow)">
+    <animateMotion dur="3s" repeatCount="indefinite" begin="4.5s">
+      <mpath><path d="M765,172 L875,172" /></mpath>
+    </animateMotion>
+  </circle>
+
+  <!-- Express end-to-end packets -->
+  <circle class="packet" r="4" fill="#58a6ff" filter="url(#packet-glow)">
+    <animateMotion dur="12s" repeatCount="indefinite" begin="0s">
+      <mpath><path d="M180,172 L315,172 L385,172 L510,172 L590,172 L695,172 L765,172 L875,172" /></mpath>
+    </animateMotion>
+  </circle>
+  <circle class="packet" r="3.5" fill="#3fb950" filter="url(#packet-glow)">
+    <animateMotion dur="12s" repeatCount="indefinite" begin="6s">
+      <mpath><path d="M180,172 L315,172 L385,172 L510,172 L590,172 L695,172 L765,172 L875,172" /></mpath>
     </animateMotion>
   </circle>
 
   <!-- ===== DEVICES ===== -->
 
-  <!-- 1. ISP Cloud -->
-  <g transform="translate(60, 80)">
-    <path d="M70,40 
-             A20,20 0 0,1 100,20 
-             A25,25 0 0,1 140,30 
-             A18,18 0 0,1 140,60 
-             L70,60 
-             A12,12 0 0,1 50,50 
-             A15,15 0 0,1 70,40Z" 
-          fill="none" stroke="#58a6ff" stroke-width="2" stroke-dasharray="4,3" />
-    <text x="70" y="80" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" text-anchor="middle">ISP</text>
+  <!-- 1. INTERNET CLOUD -->
+  <g transform="translate(85, 147)">
+    <circle class="glow-pulse" cx="45" cy="25" r="45" fill="url(#glow-blue)">
+      <animate attributeName="r" values="45;58;45" dur="4s" begin="0s" repeatCount="indefinite" />
+    </circle>
+    <!-- Cloud shape with dashed border -->
+    <path d="M15,40 A12,12 0 0,1 32,22 A16,16 0 0,1 62,25 A14,14 0 0,1 78,42 A8,8 0 0,1 70,50 L15,50 A8,8 0 0,1 8,44 A10,10 0 0,1 15,40 Z" fill="none" stroke="#58a6ff" stroke-width="2" stroke-dasharray="5,3" />
+    <!-- Incoming signal lines -->
+    <line x1="-6" y1="24" x2="4" y2="24" stroke="#58a6ff" stroke-width="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2s" begin="0s" repeatCount="indefinite" />
+    </line>
+    <line x1="-12" y1="30" x2="-2" y2="30" stroke="#58a6ff" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.05;0.3" dur="2s" begin="0.3s" repeatCount="indefinite" />
+    </line>
+    <line x1="-4" y1="36" x2="6" y2="36" stroke="#58a6ff" stroke-width="1" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.08;0.4" dur="2s" begin="0.6s" repeatCount="indefinite" />
+    </line>
+    <text x="45" y="72" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" font-weight="bold" text-anchor="middle">INTERNET</text>
   </g>
 
-  <!-- 2. Firewall - Shield shape -->
-  <g transform="translate(280, 80)">
-    <polygon points="30,0 60,15 30,60 0,15" fill="none" stroke="#58a6ff" stroke-width="2" />
-    <polyline points="15,20 25,32 45,12" fill="none" stroke="#3fb950" stroke-width="2.5" />
-    <text x="30" y="80" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" text-anchor="middle">FIREWALL</text>
+  <!-- 2. FIREWALL -->
+  <g transform="translate(320, 148)">
+    <circle class="glow-pulse" cx="30" cy="27" r="42" fill="url(#glow-orange)">
+      <animate attributeName="r" values="42;54;42" dur="4s" begin="1s" repeatCount="indefinite" />
+    </circle>
+    <!-- Rotating scanning arc -->
+    <path class="scan-arc" d="M30,0 A30,30 0 1,1 30,60" fill="none" stroke="#d29922" stroke-width="2" stroke-dasharray="14,28" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 30 30" to="360 30 30" dur="3s" repeatCount="indefinite" />
+    </path>
+    <!-- Shield body -->
+    <polygon points="30,5 55,22 30,55 5,22" fill="none" stroke="#d29922" stroke-width="2" />
+    <!-- Shield inner glow -->
+    <polygon points="30,10 50,23 30,50 10,23" fill="#d29922" opacity="0.05" />
+    <!-- Checkmark → encrypted packet verification -->
+    <polyline points="20,28 28,36 42,18" fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="stroke-dashoffset" values="26;0" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-dasharray" values="26,26;0,26" dur="1.5s" repeatCount="indefinite" />
+    </polyline>
+    <!-- Lock icon (encrypted packet indicator) -->
+    <g class="lock-icon" opacity="0" transform="translate(20, 17)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" begin="0.75s" repeatCount="indefinite" />
+      <rect x="0" y="3" width="10" height="8" rx="1.5" fill="none" stroke="#3fb950" stroke-width="1.5" />
+      <path d="M2,3 L2,1 A3,3 0 0,1 8,1 L8,3" fill="none" stroke="#3fb950" stroke-width="1.5" />
+      <circle cx="5" cy="7" r="1.5" fill="#3fb950" />
+    </g>
+    <text x="30" y="75" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" font-weight="bold" text-anchor="middle">FIREWALL</text>
   </g>
 
-  <!-- 3. Switch -->
-  <g transform="translate(490, 95)">
-    <rect x="0" y="0" width="60" height="30" rx="2" fill="none" stroke="#58a6ff" stroke-width="2" />
+  <!-- 3. SWITCH / ROUTER -->
+  <g transform="translate(515, 156)">
+    <circle class="glow-pulse" cx="35" cy="18" r="42" fill="url(#glow-cyan)">
+      <animate attributeName="r" values="42;54;42" dur="4s" begin="2s" repeatCount="indefinite" />
+    </circle>
+    <!-- Switch chassis -->
+    <rect x="0" y="0" width="70" height="36" rx="3" fill="none" stroke="#56d4dd" stroke-width="2" />
     <!-- Port dots left -->
-    <circle cx="0" cy="7" r="2" fill="#56d4dd" />
-    <circle cx="0" cy="15" r="2" fill="#56d4dd" />
-    <circle cx="0" cy="23" r="2" fill="#56d4dd" />
+    <circle cx="0" cy="7" r="2.5" fill="#56d4dd" />
+    <circle cx="0" cy="18" r="2.5" fill="#56d4dd" />
+    <circle cx="0" cy="29" r="2.5" fill="#56d4dd" />
     <!-- Port dots right -->
-    <circle cx="60" cy="7" r="2" fill="#56d4dd" />
-    <circle cx="60" cy="15" r="2" fill="#56d4dd" />
-    <circle cx="60" cy="23" r="2" fill="#56d4dd" />
-    <text x="30" y="50" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" text-anchor="middle">SWITCH</text>
+    <circle cx="70" cy="7" r="2.5" fill="#56d4dd" />
+    <circle cx="70" cy="18" r="2.5" fill="#56d4dd" />
+    <circle cx="70" cy="29" r="2.5" fill="#56d4dd" />
+    <!-- Internal data path lines -->
+    <line x1="8" y1="7" x2="62" y2="7" stroke="#56d4dd" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4" />
+    <line x1="8" y1="29" x2="62" y2="29" stroke="#56d4dd" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4" />
+    <line x1="15" y1="18" x2="55" y2="18" stroke="#56d4dd" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.6" />
+    <!-- Activity LED -->
+    <circle class="led-blink" cx="64" cy="31" r="1.5" fill="#56d4dd">
+      <animate attributeName="opacity" values="1;0.15;1" dur="1s" repeatCount="indefinite" />
+    </circle>
+    <!-- Floating routing labels -->
+    <text class="binary-digit" x="73" y="10" fill="#56d4dd" font-family="'Courier New', monospace" font-size="7" opacity="0">TCP
+      <animate attributeName="opacity" values="0;0.65;0" dur="4s" begin="0s" repeatCount="indefinite" />
+    </text>
+    <text class="binary-digit" x="73" y="22" fill="#56d4dd" font-family="'Courier New', monospace" font-size="7" opacity="0">TLS
+      <animate attributeName="opacity" values="0;0.65;0" dur="4s" begin="1s" repeatCount="indefinite" />
+    </text>
+    <text class="binary-digit" x="-5" y="50" fill="#bc8cff" font-family="'Courier New', monospace" font-size="7" opacity="0">443
+      <animate attributeName="opacity" values="0;0.6;0" dur="4s" begin="2s" repeatCount="indefinite" />
+    </text>
+    <text class="binary-digit" x="25" y="50" fill="#bc8cff" font-family="'Courier New', monospace" font-size="7" opacity="0">10.0.0.x
+      <animate attributeName="opacity" values="0;0.5;0" dur="5s" begin="3s" repeatCount="indefinite" />
+    </text>
+    <text x="35" y="65" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" font-weight="bold" text-anchor="middle">SWITCH</text>
   </g>
 
-  <!-- 4. Server Rack (2U) -->
-  <g transform="translate(665, 90)">
-    <rect x="0" y="0" width="60" height="60" rx="3" fill="none" stroke="#58a6ff" stroke-width="2" />
-    <rect x="5" y="3" width="50" height="24" rx="2" fill="none" stroke="#30363d" stroke-width="1.5" />
-    <rect x="5" y="33" width="50" height="24" rx="2" fill="none" stroke="#30363d" stroke-width="1.5" />
-    <!-- Server1 LEDs -->
-    <circle cx="50" cy="14" r="2.5" fill="#3fb950">
-      <animate attributeName="opacity" values="1;0.2;1" dur="2s" begin="0s" repeatCount="indefinite" />
+  <!-- 4. SERVERS / CLOUD -->
+  <g transform="translate(700, 145)">
+    <circle class="glow-pulse" cx="30" cy="32" r="48" fill="url(#glow-purple)">
+      <animate attributeName="r" values="48;60;48" dur="4s" begin="3s" repeatCount="indefinite" />
     </circle>
-    <circle cx="50" cy="44" r="2.5" fill="#3fb950">
-      <animate attributeName="opacity" values="1;0.2;1" dur="2s" begin="0.5s" repeatCount="indefinite" />
+    <!-- Cloud layer above servers -->
+    <path d="M12,5 A7,7 0 0,1 24,-1 A9,9 0 0,1 40,2 A8,8 0 0,1 50,10 A4,4 0 0,1 46,15 L12,15 A5,5 0 0,1 8,11 A6,6 0 0,1 12,5 Z" fill="none" stroke="#bc8cff" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.8" />
+    <!-- Processing pulse on cloud -->
+    <circle class="pulse" cx="28" cy="7" r="2" fill="none" stroke="#bc8cff" stroke-width="1" opacity="0">
+      <animate attributeName="r" values="2;18" dur="3s" begin="0s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0" dur="3s" begin="0s" repeatCount="indefinite" />
     </circle>
-    <text x="30" y="80" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" text-anchor="middle">SERVERS</text>
+    <!-- Server rack enclosure -->
+    <rect x="5" y="18" width="50" height="50" rx="3" fill="none" stroke="#bc8cff" stroke-width="2" />
+    <!-- Server unit 1 -->
+    <rect x="10" y="22" width="40" height="18" rx="2" fill="none" stroke="#30363d" stroke-width="1.5" />
+    <text x="16" y="34" fill="#8b949e" font-family="'Courier New', monospace" font-size="6">SRV-01</text>
+    <circle class="led-blink" cx="42" cy="30" r="2" fill="#3fb950">
+      <animate attributeName="opacity" values="1;0.15;1" dur="1.5s" begin="0s" repeatCount="indefinite" />
+    </circle>
+    <!-- Server unit 2 -->
+    <rect x="10" y="44" width="40" height="18" rx="2" fill="none" stroke="#30363d" stroke-width="1.5" />
+    <text x="16" y="56" fill="#8b949e" font-family="'Courier New', monospace" font-size="6">SRV-02</text>
+    <circle class="led-blink" cx="42" cy="52" r="2" fill="#3fb950">
+      <animate attributeName="opacity" values="1;0.15;1" dur="1.5s" begin="0.75s" repeatCount="indefinite" />
+    </circle>
+    <!-- Data flow between server nodes -->
+    <line x1="30" y1="18" x2="30" y2="22" stroke="#bc8cff" stroke-width="1" opacity="0.6">
+      <animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite" />
+    </line>
+    <text x="30" y="85" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" font-weight="bold" text-anchor="middle">SERVERS</text>
   </g>
 
-  <!-- 5. Endpoints - Laptop + Monitor -->
-  <g transform="translate(810, 80)">
+  <!-- 5. ENDPOINTS -->
+  <g transform="translate(885, 148)">
+    <circle class="glow-pulse" cx="35" cy="22" r="48" fill="url(#glow-green)">
+      <animate attributeName="r" values="48;62;48" dur="3s" begin="0s" repeatCount="indefinite" />
+    </circle>
     <!-- Laptop -->
-    <rect x="0" y="30" width="40" height="4" rx="1" fill="none" stroke="#58a6ff" stroke-width="1.5" />
-    <rect x="2" y="15" width="36" height="18" rx="2" fill="none" stroke="#58a6ff" stroke-width="1.5" />
-    <text x="12" y="28" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="5" text-anchor="middle">_</text>
+    <rect x="2" y="22" width="40" height="5" rx="1.5" fill="none" stroke="#3fb950" stroke-width="1.5" />
+    <rect x="5" y="6" width="34" height="18" rx="2" fill="none" stroke="#3fb950" stroke-width="1.5" />
+    <text x="22" y="18" fill="#3fb950" font-family="'Courier New', monospace" font-size="7" text-anchor="middle">_</text>
     <!-- Desktop Monitor -->
-    <rect x="50" y="5" width="30" height="25" rx="2" fill="none" stroke="#58a6ff" stroke-width="1.5" />
-    <rect x="58" y="30" width="14" height="3" rx="1" fill="none" stroke="#58a6ff" stroke-width="1" />
-    <rect x="63" y="33" width="4" height="4" rx="1" fill="none" stroke="#58a6ff" stroke-width="1" />
-    <text x="65" y="55" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" text-anchor="middle">ENDPOINTS</text>
+    <rect x="50" y="0" width="30" height="24" rx="2" fill="none" stroke="#3fb950" stroke-width="1.5" />
+    <rect x="56" y="24" width="18" height="3" rx="1" fill="none" stroke="#3fb950" stroke-width="1" />
+    <rect x="61" y="27" width="8" height="4" rx="1" fill="none" stroke="#3fb950" stroke-width="1" />
+    <!-- SECURE indicator text -->
+    <text class="pulse" x="35" y="48" fill="#3fb950" font-family="'Courier New', Consolas, monospace" font-size="8" font-weight="bold" text-anchor="middle" opacity="0">
+      [SECURE]
+      <animate attributeName="opacity" values="0;1;0" dur="4s" begin="1s" repeatCount="indefinite" />
+    </text>
+    <!-- Green success pulses radiating from endpoints -->
+    <circle class="pulse" cx="35" cy="22" r="2" fill="none" stroke="#3fb950" stroke-width="1.5" opacity="0">
+      <animate attributeName="r" values="2;42" dur="3s" begin="0s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0" dur="3s" begin="0s" repeatCount="indefinite" />
+    </circle>
+    <circle class="pulse" cx="35" cy="22" r="2" fill="none" stroke="#3fb950" stroke-width="1.5" opacity="0">
+      <animate attributeName="r" values="2;42" dur="3s" begin="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="35" y="68" fill="#8b949e" font-family="'Courier New', Consolas, monospace" font-size="11" font-weight="bold" text-anchor="middle">ENDPOINTS</text>
+  </g>
+
+  <!-- ===== LOWER AREA: CIRCUIT TRACES ===== -->
+  <g opacity="0.18" stroke="#58a6ff" stroke-width="0.6" fill="none">
+    <!-- Horizontal data bus lines -->
+    <path d="M40,380 L160,380 L160,360 L220,360 L220,390 L260,390" />
+    <path d="M280,395 L280,370 L340,370 L340,395" />
+    <path d="M580,385 L640,385 L640,355 L700,355 L700,375 L740,375" />
+    <path d="M830,390 L830,365 L890,365 L890,395 L930,395" />
+    <!-- Via dots -->
+    <circle cx="260" cy="390" r="2" fill="#58a6ff" />
+    <circle cx="340" cy="395" r="2" fill="#58a6ff" />
+    <circle cx="740" cy="375" r="2" fill="#58a6ff" />
+    <circle cx="930" cy="395" r="2" fill="#58a6ff" />
+  </g>
+
+  <!-- ===== AMBIENT FLOATING PARTICLES ===== -->
+  <g class="particle">
+    <!-- Particle 1: curves from upper-left to lower-center -->
+    <circle r="1.5" fill="#58a6ff" opacity="0.6">
+      <animateMotion dur="8s" repeatCount="indefinite" begin="0s">
+        <mpath><path d="M40,200 Q200,310 400,230" /></mpath>
+      </animateMotion>
+    </circle>
+    <!-- Particle 2: curves from upper-right to lower-center -->
+    <circle r="1.5" fill="#56d4dd" opacity="0.5">
+      <animateMotion dur="10s" repeatCount="indefinite" begin="1.2s">
+        <mpath><path d="M940,210 Q720,340 520,250" /></mpath>
+      </animateMotion>
+    </circle>
+    <!-- Particle 3: mid-left to mid-right -->
+    <circle r="1" fill="#3fb950" opacity="0.5">
+      <animateMotion dur="7s" repeatCount="indefinite" begin="2.5s">
+        <mpath><path d="M280,310 Q480,260 680,320" /></mpath>
+      </animateMotion>
+    </circle>
+    <!-- Particle 4: lower sweep -->
+    <circle r="1.5" fill="#bc8cff" opacity="0.4">
+      <animateMotion dur="9s" repeatCount="indefinite" begin="3.8s">
+        <mpath><path d="M580,360 Q380,300 180,370" /></mpath>
+      </animateMotion>
+    </circle>
+    <!-- Particle 5: diagonal cross -->
+    <circle r="1" fill="#d29922" opacity="0.5">
+      <animateMotion dur="6s" repeatCount="indefinite" begin="4.5s">
+        <mpath><path d="M780,310 Q580,270 380,340" /></mpath>
+      </animateMotion>
+    </circle>
+    <!-- Particle 6: slow drift -->
+    <circle r="1.5" fill="#58a6ff" opacity="0.35">
+      <animateMotion dur="11s" repeatCount="indefinite" begin="1.8s">
+        <mpath><path d="M120,360 Q480,210 850,350" /></mpath>
+      </animateMotion>
+    </circle>
   </g>
 </svg>
