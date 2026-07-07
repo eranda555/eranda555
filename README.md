@@ -7,7 +7,12 @@
 **ICT Undergraduate — University of Kelaniya, Sri Lanka**  
 *Specializing in Computer Systems Networking & Telecommunications*
 
-**[LinkedIn](https://www.linkedin.com/in/eranda-vishwa-66a3b1275/)** · **[Portfolio](https://eranda555.github.io)** · **[Email](mailto:erandavishwa555@gmail.com)**
+<p align="center">
+  <a href="https://www.linkedin.com/in/eranda-vishwa-66a3b1275/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;&nbsp;
+  <a href="https://github.com/eranda555"><img src="https://img.shields.io/badge/GitHub-333333?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>&nbsp;&nbsp;
+  <a href="https://eranda555.github.io"><img src="https://img.shields.io/badge/Portfolio-56d4dd?style=for-the-badge&logo=globe&logoColor=0d1117" alt="Portfolio"></a>&nbsp;&nbsp;
+  <a href="mailto:erandavishwa555@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+</p>
 
 > `network_engineer@eranda:~$` Designing, securing, and optimizing network infrastructure — one packet at a time.
 
@@ -104,10 +109,12 @@ A feature-rich scientific calculator modeled after Casio-class devices. Supports
 
 I'm always open to discussing network engineering, cybersecurity, or potential collaborations — especially if you're working on something in the Sri Lankan tech space.
 
--  **Email:** [erandavishwa555@gmail.com](mailto:erandavishwa555@gmail.com)
--  **LinkedIn:** [linkedin.com/in/eranda-vishwa-66a3b1275](https://www.linkedin.com/in/eranda-vishwa-66a3b1275/)
--  **Portfolio:** [eranda555.github.io](https://eranda555.github.io)
--  **GitHub:** [github.com/eranda555](https://github.com/eranda555)
+<p align="center">
+  <a href="https://www.linkedin.com/in/eranda-vishwa-66a3b1275/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;&nbsp;
+  <a href="https://github.com/eranda555"><img src="https://img.shields.io/badge/GitHub-333333?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>&nbsp;&nbsp;
+  <a href="https://eranda555.github.io"><img src="https://img.shields.io/badge/Portfolio-56d4dd?style=for-the-badge&logo=globe&logoColor=0d1117" alt="Portfolio"></a>&nbsp;&nbsp;
+  <a href="mailto:erandavishwa555@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+</p>
 
 ---
 
