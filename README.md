@@ -81,20 +81,16 @@ A feature-rich scientific calculator modeled after Casio-class devices. Supports
 
 ---
 
-## GitHub Activity
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=eranda555&theme=github-dark&hide_border=true&background=0d1117&stroke=3fb950&ring=3fb950&fire=3fb950&currStreakLabel=3fb950" alt="GitHub Streak" />
-
----
 
 ## Let's Connect
 
 I'm always open to discussing network engineering, cybersecurity, or potential collaborations — especially if you're working on something in the Sri Lankan tech space.
 
--  **Email:** [erandavishwa555@gmail.com](mailto:erandavishwa555@gmail.com)
--  **LinkedIn:** [linkedin.com/in/eranda-vishwa-66a3b1275](https://www.linkedin.com/in/eranda-vishwa-66a3b1275/)
--  **Portfolio:** [eranda555.github.io](https://eranda555.github.io)
--  **GitHub:** [github.com/eranda555](https://github.com/eranda555)
+<a href="mailto:erandavishwa555@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat&logo=gmail&logoColor=white" alt="Email"></a>&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/eranda-vishwa-66a3b1275/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;&nbsp;
+<a href="https://eranda555.github.io"><img src="https://img.shields.io/badge/Portfolio-3fb950?style=flat&logo=google-chrome&logoColor=white" alt="Portfolio"></a>&nbsp;&nbsp;
+<a href="https://github.com/eranda555"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub"></a>
 
 ---
 
